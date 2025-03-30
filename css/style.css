@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+    }
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    }
+a {
+    color: inherit;
+    text-decoration: none;
+    }
+img {
+    max-width: 100%;
+    }
+body{
+    margin: 0;
+    padding: 0;
+    }
+    /*start of header*/
+header{
+    padding-left: 3.125%;
+    padding-right: 3.125%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 125px;
+    font-size: 1.8rem;
+    }
+.header-logo-container{
+    display: flex;
+    align-items: center;
+    gap: 4.6rem;
+    }
+.header-logo-container img{
+    width: 191px;
+    height: 35px;
+    }
+.header-img-container{
+    display: flex;
+    align-items: center;
+    gap: 9px
+}
+.header-img-container img{
+    display: flex;
+    width: 21px;
+    height: 21px;
+}
+/* space between blocks*/
+.header-auth-buttons{
+    gap: 32px;
+    display: flex;
+    align-items: center;
+}
+.header-auth-buttons nav{
+    display: flex;
+    gap: 30px;
+}
+.reserv-button{
+    width: 199.5px;
+    height: 50px;
+    display: flex;
+    background: #7A9CA5;
+    color: #fff;
+    padding: 16px 33px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+.header-auth-buttons button img{
+    width: 15px;
+    height: 15px;
+}
+.header-auth-img-container{
+    gap: 30px;
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 1439px){
+    
+}
+/*end of header*/
