@@ -1,3 +1,17 @@
+/*#region sbasic satings*/
+@font-face {
+    font-family: 'Playfair'; 
+    src: url('../fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+    font-weight: 700; 
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope-Regular.woff2') format('woff2');
+    font-weight: 400; 
+    font-style: normal;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -24,7 +38,9 @@ body{
     margin: 0;
     padding: 0;
     }
-    /*start of header*/
+/*#endregion*/
+
+/*#region header*/
 header{
     padding-left: 3.125%;
     padding-right: 3.125%;
@@ -110,12 +126,12 @@ bottom: 0;
     display: flex;
     align-items: center;
 }
+/*#endregion*/
 
-/*end of header*/
-/*start of footer*/
 
-/*end of footer*/
+/*#region madia*/
 @media screen and (max-width: 1439px){
+    /*start of header*/
     .header-auth-buttons nav{
         display:none;
         gap: 30px;
@@ -123,16 +139,20 @@ bottom: 0;
     .burger-menu{
         display: block;
     }
+    /*end of header*/
 }
 @media screen and (max-width: 1000px){
+    /*start of header*/
     .header-auth-img-container{
         display: none;
     }
     .header-img-container{
         display: none;
     }
+    /*end of header*/
 }
 @media screen and (max-width: 550px){
+    /*start of header*/
     header{
         height: 80px;
     }
@@ -143,4 +163,6 @@ bottom: 0;
         width: 40px;
         height: 40px;
     }
+    /*#endregion*/
+
 }
