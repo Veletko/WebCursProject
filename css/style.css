@@ -25,7 +25,7 @@ html {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
     }
 a {
     color: inherit;
@@ -41,6 +41,7 @@ body{
 /*#endregion*/
 
 /*#region header*/
+/*#region logo block*/
 header{
     padding-left: 3.125%;
     padding-right: 3.125%;
@@ -75,16 +76,21 @@ header{
     width: 21px;
     height: 21px;
 }
-/* space between blocks*/
+/*#endregion*/
+
+/*#region  space between blocks*/
+
 .header-auth-buttons{
     gap: 32px;
     display: flex;
     align-items: center;
 }
+
 .header-auth-buttons nav{
     display: flex;
     gap: 30px;
 }
+
 .reserv-button{
     width: 199.5px;
     height: 50px;
@@ -97,40 +103,130 @@ header{
     gap: 10px;
     font-size: 1.4rem;
 }
-/* satrt of burger menu*/
-.burger-menu{
-    cursor: pointer;
-    display: none;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    }
-.burger-menu::before,
-.burger-menu::after{
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: #000;
-  left: 0;
-  transition: all 0.3s ease;
-}
-.burger-menur::before {
-top: 0;
-}
-.burger-menu::after {
-bottom: 0;
-}
-/*end of burger menu*/
+
 .header-auth-buttons button img{
     width: 15px;
     height: 15px;
 }
+
 .header-auth-img-container{
     gap: 30px;
     display: flex;
     align-items: center;
 }
+.theme-button{
+    cursor: pointer;
+    background: none;
+}
+.theme-button img{
+    width: 35px !important;
+    height: 35px !important;
+}
+/*#region visually-impaired-button block*/
+
+.visually-impaired-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #7A9CA5;
+    color: white;
+    cursor: pointer;
+    padding: 4px;
+    max-width: 200px;
+    max-height: 50px;
+    overflow-wrap: break-word;
+}
+.visually-impaired-button p{
+    font-family: 'Manrope';
+    letter-spacing: -0.18px;
+    font-size: 1.8rem;
+}
+.visually-impaired-button img{
+    filter: invert(100%);
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/*#endregion*/
+
+/*#region change languages block*/
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+  
+.language-selector-button {
+    background: #7A9CA5;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 31px;
+    min-width: 75px;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.language-selector-list{
+    display: none;
+    min-width: 75px;
+    position: absolute;
+    color: white;
+    background: #53727a;
+    list-style: none;
+    font-family: 'Manrope';
+    letter-spacing: -0.18px;
+    font-size: 1.8rem;
+}
+
+.language-selector-list li{
+    display: flex;
+    justify-content: center;
+}
+/*#endregion*/
+
+/*#region satrt of burger menu*/
+.burger-menu {
+    cursor: pointer;
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 30px; 
+    background: none; 
+    border: none; 
+    padding: 0; 
+  } 
+  .burger-menu::before,
+  .burger-menu::after,
+  .burger-menu span {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px; 
+    background-color: #000;
+    left: 0;
+  }
+  .burger-menu::before {
+    top: 0;
+  }
+  .burger-menu::after {
+    bottom: 0;
+  }
+  .burger-menu span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+/*#endregion*/
+
+/*#endregion*/
+
 /*#endregion*/
 
 /*#region footer*/
@@ -240,14 +336,14 @@ footer{
 }
 .footer-button-container p{
     font-family: Manrope;
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 200%;
     letter-spacing: -0.18px;
 }
 /*#endregion*/
 
 /*#region madia*/
-@media screen and (max-width: 1450px){
+@media screen and (max-width: 1919px){
     /*start of header*/
     .header-auth-buttons nav{
         display:none;
@@ -259,7 +355,7 @@ footer{
     /*end of header*/
 
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1450px){
     /*start of header*/
     .header-auth-img-container{
         display: none;
@@ -276,7 +372,7 @@ footer{
     }
     /*end of footer*/
 }
-@media screen and (max-width: 550px){
+@media screen and (max-width: 1000px){
     /*start of header*/
     header{
         height: 80px;
@@ -284,10 +380,17 @@ footer{
     .reserv-button{
         display: none;
     }
-    .burger-menu{
-        width: 40px;
-        height: 40px;
+    .language-selector{
+        display: none;
+    }
+    .theme-button{
+        display: none;
     }
     /*#endregion*/
 
+}
+@media screen and (max-width: 550px){
+    .visually-impaired-button{
+        display: none;
+    }
 }
