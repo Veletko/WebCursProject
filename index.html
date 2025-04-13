@@ -16,9 +16,11 @@
             </div>
         </div>
         <div class="header-auth-buttons">
-            <button class="theme-button">
-                <img src="img/sun.png" alt="theme icon">
-            </button>
+            <label class="theme-toggle">
+                <input type="checkbox" hidden>  
+                <img class="sun" src="img/sun.png" alt="sun">
+                <img class="moon" src="img/moon.png" alt="moon">
+              </label>
             <button class="visually-impaired-button">
                 <img  src="img/eye.png" alt="eye">
                 <p>
@@ -26,19 +28,14 @@
                 </p>
             </button>
             <div class="language-selector">
-                <button class="language-selector-button" aria-expanded="false" aria-haspopup="true">
-                  <span class="current-language">RU</span>
-                  <span class="arrow">▼</span>
-                </button>
-                <ul class="language-selector-list">
-                    <li>
-                      <a href="#" data-lang="ru" class="active">Русский</a>
-                    </li>
-                    <li>
-                      <a href="#" data-lang="en">English</a>
-                    </li>
-                  </ul>
-            </div>
+                <label>
+                  <input type="checkbox" class="language-checkbox" hidden>
+                  <div class="language-toggle">
+                    <span class="language-option ru">RU</span>
+                    <span class="language-option en">EN</span>
+                  </div>
+                </label>
+              </div>
             <nav>
                 <a href="">Log in</a>
                 <a href="">Home</a>
@@ -47,11 +44,6 @@
                 <a href="">Services</a>
                 <a href="">Contact</a>
             </nav>
-            <div class="header-auth-img-container">
-                <img src="img/facebook.png" alt="facebook">
-                <img src="img/X.png" alt="X">
-                <img src="img/in.png" alt="in">
-            </div>
             <button class="burger-menu">
                 <span></span>
             </button>
@@ -59,6 +51,9 @@
                 <img src="img/reservetionLogo.png" alt="">
                 <p>RESERVATION</p>
             </button>
+            <a href="">
+                <img class="basket" src="img/basket.png" alt="basket">
+            </a>
         </div>
     </header>
     <footer>

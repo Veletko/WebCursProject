@@ -108,20 +108,50 @@ header{
     width: 15px;
     height: 15px;
 }
+.basket{
+    width: 35px;
+    height: 35px;
+}
+/*#region theme*/
+.theme-toggle {
+    display: inline-block;  
+    position: relative;    
+    cursor: pointer;       
+  }
+  .theme-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .theme-toggle img {
+    width: 35px;          
+    height: 35px;
+    transition: opacity 0.3s ease;
+    vertical-align: middle;
+  }
 
-.header-auth-img-container{
-    gap: 30px;
-    display: flex;
-    align-items: center;
-}
-.theme-button{
-    cursor: pointer;
-    background: none;
-}
-.theme-button img{
-    width: 35px !important;
-    height: 35px !important;
-}
+  .theme-toggle .moon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .theme-toggle .sun {
+    opacity: 1;
+  }
+  .theme-toggle .moon {
+    opacity: 0;
+  }
+  
+  .theme-toggle input:checked ~ .sun {
+    opacity: 0;
+  }
+  .theme-toggle input:checked ~ .moon {
+    opacity: 1;
+  }
+/*#endregion*/
+
 /*#region visually-impaired-button block*/
 
 .visually-impaired-button{
@@ -153,43 +183,50 @@ header{
 /*#region change languages block*/
 
 .language-selector {
-    position: relative;
     display: inline-block;
-}
+    position: relative;
+  }
   
-.language-selector-button {
-    background: #7A9CA5;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 31px;
-    min-width: 75px;
-}
-
-.arrow {
-    font-size: 1.2rem;
-    transition: transform 0.2s;
-}
-
-.language-selector-list{
-    display: none;
-    min-width: 75px;
+  .language-checkbox {
     position: absolute;
-    color: white;
-    background: #53727a;
-    list-style: none;
+    opacity: 0;
+  }
+  
+  .language-toggle {
+    display: inline-flex;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .language-option {
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .language-option.ru {
+    background: #7A9CA5;
+    color: #FFF;
+    font-weight: bold;
     font-family: 'Manrope';
-    letter-spacing: -0.18px;
-    font-size: 1.8rem;
-}
+  }
+  
+  .language-option.en {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    font-family: 'Manrope';
+  }
+  
 
-.language-selector-list li{
-    display: flex;
-    justify-content: center;
-}
+  .language-checkbox:checked + .language-toggle .language-option.ru {
+    background-color: #FFF;
+    color: #000;
+  }
+  
+  .language-checkbox:checked + .language-toggle .language-option.en {
+    background: #7A9CA5;
+    color: #FFF; 
+  }
 /*#endregion*/
 
 /*#region satrt of burger menu*/
@@ -357,9 +394,6 @@ footer{
 }
 @media screen and (max-width: 1450px){
     /*start of header*/
-    .header-auth-img-container{
-        display: none;
-    }
     .header-img-container{
         display: none;
     }
@@ -372,7 +406,7 @@ footer{
     }
     /*end of footer*/
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1080px){
     /*start of header*/
     header{
         height: 80px;
@@ -383,14 +417,16 @@ footer{
     .language-selector{
         display: none;
     }
-    .theme-button{
+    .theme-toggle{
         display: none;
     }
-    /*#endregion*/
-
-}
-@media screen and (max-width: 550px){
-    .visually-impaired-button{
-        display: none;
+    @media screen and (max-width: 640px){
+        .visually-impaired-button{
+            display: none;
+        }
+        .basket{
+            display: none;
+        }
     }
 }
+/*#endregion*/
