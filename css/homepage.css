@@ -1,0 +1,113 @@
+/*#region banner*/
+.banner-container{
+    display: flex;
+}
+/*#region banner-left*/
+.banner-container-left{
+    display: flex;
+    height: 925px;
+    width: 53.125vw;
+    background-color:  #EBF3F5;
+    align-items: center;
+    padding-left: 18.75vw;
+}
+.banner-container-text{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.banner-container-text-logo{
+    display: flex;
+    gap: 9px;
+}
+.banner-container-text h1{
+    color: #141414;
+    font-family: "Playfair";
+    font-size: 7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%; /* 80.5px */
+    letter-spacing: -0.7px;
+}
+.banner-container-text h3{
+    color: #5C8692;
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 154.5%; /* 23.175px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.banner-container-text p{
+    color: #555;
+    font-family: 'Manrope';
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%; /* 32.3px */
+    padding-bottom: 34px;
+    padding-top: 24px;
+}
+.banner-button{
+    display: flex;
+    width: 250px;
+    height: 65px;
+    background-color: #5C8692;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope';
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 125%; /* 17.5px */
+    font-weight: 800;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+}
+/*#endregion*/
+
+/*#region banner-right*/
+
+.banner-container-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+.banner-container-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 44, 54, 0.8); 
+    z-index: 100;
+}
+
+.banner-container-right > * {
+    position: relative;
+    z-index: 200;
+}
+.image-frame {
+    border-top: 10px solid #FFF;
+    border-bottom: 10px solid #FFF;
+    border-right: 10px solid #FFF;
+    padding-top: 4.9em;
+    padding-bottom: 4.9em;
+    display: flex;
+}
+.image-frame img {
+    position: relative;
+    right: 7.8em;
+    width: 55em;
+    height: 54.5em;
+    box-shadow: 0px 20px 60px 0px rgba(47, 68, 73, 0.46);
+}
+/*#endregion*/
+
+/*#endregion*/
