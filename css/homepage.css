@@ -1,3 +1,22 @@
+p{
+    color: var(--gray);
+    font-family: 'Manrope';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%; /* 29.7px */
+    letter-spacing: 0.36px;
+}
+h2{
+    color: #141414;
+    text-align: center;
+    font-family: "Playfair";
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 58.5px */
+    letter-spacing: -0.45px;
+}
 /*#region banner*/
 
 .banner-container{
@@ -30,6 +49,9 @@
     line-height: 115%; /* 80.5px */
     letter-spacing: -0.7px;
 }
+.aboutus-content-text p{
+    margin-top: 11px;
+}
 .banner-container-text h3{
     color: var(--accent-dark);
     font-family: 'Manrope';
@@ -41,11 +63,7 @@
     text-transform: uppercase;
 }
 .banner-container-text p{
-    color: var(--gray);
-    font-family: 'Manrope';
     font-size: 1.9rem;
-    font-style: normal;
-    font-weight: 400;
     line-height: 170%; /* 32.3px */
     padding-bottom: 34px;
     padding-top: 24px;
@@ -139,16 +157,7 @@
     line-height: 120%; /* 31.2px */
     margin-top: 26px;
 }
-.card p{
-    color: var(--gray);
-    font-family: 'Manrope';
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 165%; /* 29.7px */
-    letter-spacing: 0.36px;
-    margin-top: 11px;
-}
+
 .card-button {
     display: flex;
     background-color: transparent;
@@ -169,11 +178,111 @@
 }
 /*#endregion*/
 
+/*#region aboutus*/
+
+.aboutus-section {
+    display: flex;
+    background-color: var(--banner-bg);
+    align-items: center;
+    gap: 6.51vw;
+    height: 914px;
+    padding: 150px 18.75vw;
+}
+
+.aboutus-content {
+    display: flex;
+    position: relative;
+    width: 529px;
+    flex-direction: column;
+    text-align: left;
+    top:10px
+}
+.aboutus-content h2 {
+    text-align: left;
+    width: 425px;
+}
+.aboutus-content h3 {
+    color: #5C8692;
+    font-family: "Manrope";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 154.5%; /* 23.175px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+.aboutus-content p{
+    margin-top: 16px;
+    letter-spacing: 0;
+}
+
+.aboutus-features {
+    display: flex;
+    margin-top: 37px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--dark-gray);
+    width: 165px;
+    height: 180px;
+    background-color: var(--white);
+    gap: 14px;
+}
+
+.feature p {
+    margin-top: 0 !important;
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: "Playfair";
+    line-height: 120%; 
+    font-weight: 700;
+}
+.aboutus-image{
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 614px;
+}
+.aboutus-image {
+    position: relative; 
+    min-width: 546px; 
+    min-height: 614px; 
+    max-width: 546px; 
+    max-height: 614px; 
+}
+
+.aboutus-image img:first-child {
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    bottom: -10px;
+    box-shadow: 0px 10px 40px 0px rgba(47, 68, 73, 0.46);
+}
+
+.aboutus-image img:last-child {                    
+    position: absolute;
+    z-index: 100;
+    top: 10px; 
+    right: 0; 
+}
+/*#endregion*/
+
 /*#region media*/
 
 @media screen and (max-width: 1700px){
     .banner-container-left{
         padding-left: 10vw;
+    }
+    .aboutus-section{
+        padding: 150px 12vw;
     }
 }
 @media screen and (max-width: 1360px){
@@ -216,6 +325,25 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 50px;
     }
+
+    /*#region aboutus*/
+
+    .aboutus-section {
+        flex-direction: column;
+        gap: 100px;
+        height: 1500px;
+        padding: 50px 12vw;
+    }
+    .aboutus-content {
+        text-align: center;
+    }
+    .aboutus-content h2 {
+        text-align: center;
+        width: 100%;
+
+    }  
+
+    /*#endregion*/
     
 @media screen and (max-width: 740px){
 
@@ -251,6 +379,38 @@
         width: 310px;
     }
 
+    /*#endregion*/
+
+    /*#region aboutus*/
+    .aboutus-section {
+        height: 1800px;
+    }
+    .aboutus-content {
+        text-align: center;
+        align-items: center;
+        width: 80vw;
+    }
+    .aboutus-image {
+        position: relative; 
+        min-width: 290px; 
+        min-height: 349px; 
+        max-width: 290px; 
+        max-height: 349px; 
+    }
+    .aboutus-image img:first-child {
+        position: absolute;
+        z-index: 200;
+        left: 0;
+        bottom: 0;
+        box-shadow: 0px 10px 40px 0px rgba(47, 68, 73, 0.46);
+    }
+    
+    .aboutus-image img:last-child {                    
+        position: absolute;
+        z-index: 100;
+        top: 0px; 
+        right: -10px; 
+    }
     /*#endregion*/
 }
 }
