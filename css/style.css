@@ -15,11 +15,11 @@
 [data-theme="dark"] {
   --white: #1a1a1a;
   --black: #f0f0f0;
-  --gray: #555;
+  --gray: #fff;
   --dark-gray: #0d1618;
   --accent: #7A9CA5;
   --border-light: rgba(255, 255, 255, 0.15);
-  --dark-green: #829ca7;
+  --dark-green: #111E22;
   --accent-dark: #5C8692;
   --banner-bg: #2A3538;
 }

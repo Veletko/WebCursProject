@@ -64,7 +64,9 @@ header {
     gap: 10px;
     font-size: 1.4rem;
 }
-
+.reserv-button p {
+    color: var(--white);
+}
 .header-auth-buttons button img {
     width: 15px;
     height: 15px;
@@ -125,7 +127,6 @@ header {
     align-items: center;
     gap: 10px;
     background: var(--accent);
-    color: var(--white);
     cursor: pointer;
     padding: 4px;
     max-width: 200px;
@@ -137,6 +138,7 @@ header {
     font-family: 'Manrope';
     letter-spacing: -0.18px;
     font-size: 1.8rem;
+    color: var(--white);
 }
 
 .visually-impaired-button img {
@@ -233,8 +235,8 @@ header {
 
 /*#region footer*/
 footer {
-    background: var(--dark-gray);
-    color: var(--white);
+    background: #1E2C30;;
+    color: #fff;
 }
 
 .footer-top-container {
@@ -270,7 +272,7 @@ footer {
 }
 
 .footer-img {
-    border: 2px solid var(--accent);
+    border: 2px solid #7A9CA5;;
     width: 55px;
     height: 55px;
     display: flex;
@@ -282,7 +284,7 @@ footer {
     display: block;
     height: 1px;          
     width: 62.5vw;                  
-    background: var(--white);      
+    background: #fff;      
     opacity: 0.15;               
 }
 
@@ -352,6 +354,7 @@ footer {
 
 .footer-button-container p {
     font-family: Manrope;
+    color: #fff;
     font-size: 1.8rem;
     line-height: 200%;
     letter-spacing: -0.18px;

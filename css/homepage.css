@@ -8,7 +8,7 @@ p{
     letter-spacing: 0.36px;
 }
 h2{
-    color: #141414;
+    color: var(--black);
     text-align: center;
     font-family: "Playfair";
     font-size: 4.5rem;
@@ -16,6 +16,16 @@ h2{
     font-weight: 700;
     line-height: 130%; /* 58.5px */
     letter-spacing: -0.45px;
+}
+h3{
+    color: var(--accent-dark);
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 154.5%; /* 23.175px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 /*#region banner*/
 
@@ -52,18 +62,7 @@ h2{
 .aboutus-content-text p{
     margin-top: 11px;
 }
-.banner-container-text h3{
-    color: var(--accent-dark);
-    font-family: 'Manrope';
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 154.5%; /* 23.175px */
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
 .banner-container-text p{
-    font-size: 1.9rem;
     line-height: 170%; /* 32.3px */
     padding-bottom: 34px;
     padding-top: 24px;
@@ -156,6 +155,8 @@ h2{
     font-weight: 700;
     line-height: 120%; /* 31.2px */
     margin-top: 26px;
+    margin-bottom: 11px;
+    text-transform: none;
 }
 
 .card-button {
@@ -185,7 +186,7 @@ h2{
     background-color: var(--banner-bg);
     align-items: center;
     gap: 6.51vw;
-    height: 914px;
+    min-height: 914px;
     padding: 150px 18.75vw;
 }
 
@@ -195,22 +196,10 @@ h2{
     width: 529px;
     flex-direction: column;
     text-align: left;
-    top:10px
 }
 .aboutus-content h2 {
     text-align: left;
     width: 425px;
-}
-.aboutus-content h3 {
-    color: #5C8692;
-    font-family: "Manrope";
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 154.5%; /* 23.175px */
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 9px;
 }
 .aboutus-content p{
     margin-top: 16px;
@@ -222,7 +211,6 @@ h2{
     margin-top: 37px;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .feature {
@@ -263,16 +251,75 @@ h2{
     position: absolute;
     z-index: 200;
     left: 0;
-    bottom: -10px;
+    bottom: 0px;
     box-shadow: 0px 10px 40px 0px rgba(47, 68, 73, 0.46);
 }
 
 .aboutus-image img:last-child {                    
     position: absolute;
     z-index: 100;
-    top: 10px; 
+    top: 0px; 
     right: 0; 
 }
+/*#endregion*/
+
+/*#region benefits*/
+
+.benefits-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 137px 18.75vw 161px 18.75vw ;
+}
+.benefits-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.85vw;
+    flex-wrap: wrap;
+}
+.benefit-item {
+    text-align: left;
+    max-width: 340px;;
+}
+.benefits-section h2{
+    margin-top: 9px;
+    margin-bottom: 43px;
+}
+.benefit-item h3{
+    color: var(--black);
+    font-family: "Playfair";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 31.2px */
+    text-transform: none;
+    margin-bottom: 11px;
+}
+.benefit-item p{
+    color: var(--gray);
+    font-family: 'Manrope';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%; /* 29.7px */
+    letter-spacing: 0.36px;
+    
+}
+.benefits-img-wrapper{
+    background-color: var(--accent-dark);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 2px dashed var(--black);
+    outline-offset: 5px;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+
 /*#endregion*/
 
 /*#region media*/
@@ -327,11 +374,12 @@ h2{
     }
 
     /*#region aboutus*/
-
+    .aboutus-features{
+        justify-content: center;
+    }
     .aboutus-section {
         flex-direction: column;
         gap: 100px;
-        height: 1500px;
         padding: 50px 12vw;
     }
     .aboutus-content {
@@ -345,6 +393,20 @@ h2{
 
     /*#endregion*/
     
+    .benefits-section {
+        padding: 137px 10vw 161px 10vw ;
+    }
+    .benefits-grid {
+        justify-content: center;
+    }
+    .benefit-item {
+        text-align: center;
+    }
+    .benefits-img-wrapper {
+        margin: 10px auto 25px auto;
+    }
+}
+
 @media screen and (max-width: 740px){
 
     /*#region banner*/
@@ -382,9 +444,6 @@ h2{
     /*#endregion*/
 
     /*#region aboutus*/
-    .aboutus-section {
-        height: 1800px;
-    }
     .aboutus-content {
         text-align: center;
         align-items: center;
@@ -408,7 +467,7 @@ h2{
     .aboutus-image img:last-child {                    
         position: absolute;
         z-index: 100;
-        top: 0px; 
+        top: 5px; 
         right: -10px; 
     }
     /*#endregion*/
