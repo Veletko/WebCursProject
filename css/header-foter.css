@@ -63,15 +63,12 @@ header {
     height: 50px;
     display: flex;
     background: var(--accent);
-    color: var(--white);
+    color: #fff;
     padding: 16px 33px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     font-size: 1.4rem;
-}
-.reserv-button p {
-    color: #fff;
 }
 .header-auth-buttons button img {
     width: 15px;
@@ -139,9 +136,6 @@ header {
     max-width: 200px;
     max-height: 50px;
     overflow-wrap: break-word;
-}
-
-.visually-impaired-button p {
     font-family: 'Manrope';
     letter-spacing: -0.18px;
     font-size: 1.8rem;
@@ -191,14 +185,14 @@ header {
     font-family: 'Manrope';
 }
 
-.language-checkbox:checked + .language-toggle .language-option.ru {
-    background-color: var(--white);
+.language-checkbox:checked ~ .language-toggle .ru {
+    background: var(--white);
     color: var(--black);
 }
-
-.language-checkbox:checked + .language-toggle .language-option.en {
+  
+.language-checkbox:checked ~ .language-toggle .en {
     background: var(--accent);
-    color: #fff; 
+    color: #fff;
 }
 /*#endregion*/
 

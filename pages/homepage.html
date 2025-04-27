@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/homepage.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="/js/homepage/homepage.js" type="module" defer></script>
+    <script src="/js/homepage/homepage.js" type="module" ></script>
 </head>
 <body>
     <div class="preloader">
@@ -18,7 +18,7 @@
     <header>
         <div class="header-logo-container">
             <img src="/img/Logo.svg" alt="logo" class="logo logo-light">
-            <img src="/img/Logo black.svg" alt="logo" class="logo logo-dark">
+            <img src="/img/Logo_black.svg" alt="logo" class="logo logo-dark">
             <div class="header-img-container">
                 <img src="/img/phone.png" alt="phone">
                 <p>Call Us - (+22) 123 456 7890</p>
@@ -32,17 +32,13 @@
             </label>
             <button class="visually-impaired-button">
                 <img  src="/img/eye.png" alt="eye">
-                <p>
-                    version for the visually impaired
-                </p>
+                version for the visually impaired
             </button>
             <div class="language-selector">
-                <label>
-                  <input type="checkbox" class="language-checkbox" hidden>
-                  <div class="language-toggle">
-                    <span class="language-option ru">RU</span>
-                    <span class="language-option en">EN</span>
-                  </div>
+                <input type="checkbox" id="lang-switch" class="language-checkbox" hidden>
+                <label for="lang-switch" class="language-toggle">
+                  <span class="language-option ru">RU</span>
+                  <span class="language-option en">EN</span>
                 </label>
               </div>
             <nav>
@@ -58,7 +54,7 @@
             </button>
             <button class="reserv-button">
                 <img src="/img/reservetionLogo.png" alt="">
-                <p>RESERVATION</p>
+                RESERVATION
             </button>
             <a href="">
                 <img class="basket" src="/img/basket.png" alt="basket">
@@ -301,23 +297,23 @@
     <footer>
         <div class="footer-top-container">
             <div class="footer-top-logo-container">
-                <img class="footer-logo-img" src="/img/Logo black.svg" alt="logo">
+                <img class="footer-logo-img" src="/img/Logo_black.svg" alt="logo">
                 <div class="footer-img-container">
                     <div class="footer-img" >
-                        <img src="/img/facebook white.png" alt="facebook">
+                        <img src="/img/facebook_white.png" alt="facebook">
                     </div>
                     <div class="footer-img" >
-                        <img src="/img/X white.png" alt="X">
+                        <img src="/img/X_white.png" alt="X">
                     </div>
                     <div class="footer-img">
-                        <img src="/img/in white.png" alt="in">
+                        <img src="/img/in_white.png" alt="in">
                     </div>
                     <div class="footer-img" >
-                        <img  src="/img/instagram white.png" alt="instagram">
+                        <img  src="/img/instagram_white.png" alt="instagram">
                     </div>
                 </div>
             </div>
-            <hr class="footer-line"></hr>
+            <hr class="footer-line">
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>Explore</h4>
