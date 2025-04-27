@@ -1,0 +1,23 @@
+{
+  "name": "cursproject",
+  "version": "1.0.0",
+  "description": "https://www.figma.com/design/Vd9L7mtYSqKnrPwdGBdpgp/Beautyness--Copy-?node-id=1-5&t=6sclnTW7K9BzGnOM-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veletko/WebCursProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Veletko/WebCursProject/issues"
+  },
+  "homepage": "https://github.com/Veletko/WebCursProject#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
