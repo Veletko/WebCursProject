@@ -20,11 +20,17 @@ header {
     gap: 4.6rem;
 }
 
-.header-logo-container img {
+.logo{
     width: 191px;
     height: 35px;
 }
+[data-theme="light"] .logo-dark {
+    display: none;
+}
 
+[data-theme="dark"] .logo-light {
+    display: none;
+}
 .header-img-container {
     display: flex;
     align-items: center;
@@ -65,7 +71,7 @@ header {
     font-size: 1.4rem;
 }
 .reserv-button p {
-    color: var(--white);
+    color: #fff;
 }
 .header-auth-buttons button img {
     width: 15px;
@@ -99,6 +105,7 @@ header {
 
 .theme-toggle .moon {
     position: absolute;
+    filter: brightness(0) invert(1);
     top: 0;
     left: 0;
 }
@@ -138,7 +145,7 @@ header {
     font-family: 'Manrope';
     letter-spacing: -0.18px;
     font-size: 1.8rem;
-    color: var(--white);
+    color: #fff;
 }
 
 .visually-impaired-button img {
@@ -172,7 +179,7 @@ header {
 
 .language-option.ru {
     background: var(--accent);
-    color: var(--white);
+    color: #fff;
     font-weight: bold;
     font-family: 'Manrope';
 }
@@ -191,7 +198,7 @@ header {
 
 .language-checkbox:checked + .language-toggle .language-option.en {
     background: var(--accent);
-    color: var(--white); 
+    color: #fff; 
 }
 /*#endregion*/
 
@@ -229,6 +236,9 @@ header {
 .burger-menu span {
     top: 50%;
     transform: translateY(-50%);
+}
+[data-theme="dark"] .basket{
+    filter: invert(1);
 }
 /*#endregion*/
 /*#endregion*/
