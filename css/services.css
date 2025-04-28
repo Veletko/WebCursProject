@@ -166,6 +166,8 @@ option{
 
 /*#endregion*/
 
+/*#region modal*/
+
 .modal {
     display: none; 
     position: fixed;
@@ -208,7 +210,7 @@ option{
 .filter-categories {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     margin: 20px 0;
   }
   
@@ -219,11 +221,11 @@ option{
   }
   
 .category-group h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
 .category-group label {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
   
 .modal-content .card-button{
@@ -236,6 +238,33 @@ option{
 body.modal-open {
     overflow: hidden;
 }
+.filter-input::-webkit-outer-spin-button,
+.filter-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.filter-input{
+    max-width: 80px;
+    height: 20px;
+    border: 2px solid var(--accent-dark);
+    color: var(--black);
+    font-family: 'Manrope';
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 125%;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    padding-left: 32px;
+    background-color: var(--white);
+}
+.categories-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+/*#endregion*/
+
+
 @media screen and (max-width: 984px){
     .filter-section{
         flex-direction: column;
