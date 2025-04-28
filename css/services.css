@@ -71,7 +71,15 @@ h1{
     flex-direction: column;
     width: 330px;
 }
-
+.card p{
+    color: var(--gray);
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%; /* 29.7px */
+    letter-spacing: 0.36px;
+}
 .card h3 {
     color: var(--black);
     font-family: "Playfair";
@@ -148,11 +156,15 @@ option{
     padding: 50px 0;
 }
 
-.pagination span, 
-.pagination a {
+.pagination-button{
+    background-color: transparent;
     cursor: pointer;
+    color: var(--black);
     font-family: 'Manrope';
-    font-size: 1.6rem;
+    font-size: 2.4rem;
+}
+.active{
+    color: var(--accent-dark);
 }
 
 .pagination span {

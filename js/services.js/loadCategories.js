@@ -1,4 +1,4 @@
-import {getTodos} from "../baseElements/getTodos.js"
+import { getTodos } from "../baseElements/getTodos.js";
 
 export async function loadCategories() {
     try {
