@@ -43,6 +43,18 @@ export async  function initServices (){
             paginationContainer.innerHTML = '';
 
             const pageCount = Math.ceil(allServices.length / itemsPrePage);
+            
+            const buttonPrev = document.createElement('button')
+            buttonPrev.textContent = "Previous Page"
+            buttonPrev.classList.add('pagination-button')
+            buttonPrev.addEventListener('click', () =>{
+                if (currentPage <= pageCount && currentPage !=1) {
+                    currentPage -= 1;
+                    renderServicesPage(currentPage);
+                    renderPagination();
+                }
+            })
+            paginationContainer.appendChild(buttonPrev);
 
             for(let i = 1; i <= pageCount; i++){
                 const button = document.createElement('button')
