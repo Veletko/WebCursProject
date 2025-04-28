@@ -1,18 +1,19 @@
+import { loadCategories } from "./loadCategories.js";
+
 export function initFiltersModelWindow() {
     const modal = document.getElementById('filter-modal');
-    const openModal = document.querySelector('.filter-section .card-button:nth-child(2)');
-    const closeModal = document.getElementById('close-modal')
+    const openModalBtn = document.querySelector('.filter-section .card-button:nth-child(2)');
+    const closeModalBtn = document.getElementById('close-modal');
 
-    openModal.addEventListener('click', () =>{
+    openModalBtn.addEventListener('click', async () => {
         modal.classList.add('open');
         document.body.classList.add('modal-open');
-    })
+        await loadCategories(); 
+    });
 
-    closeModal.addEventListener('click', () =>{
+    closeModalBtn.addEventListener('click', () => {
         modal.classList.remove('open');
         document.body.classList.remove('modal-open');
-    })
+    });
     
-    openModalBtn.addEventListener('click', openModal);
-    closeModalBtn.addEventListener('click', closeModal);
 }
