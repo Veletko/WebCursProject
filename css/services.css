@@ -1,0 +1,54 @@
+h3{
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 154.5%; /* 23.175px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+h1{
+    color: #FFF;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 66px */
+    letter-spacing: -0.55px;
+}
+/*#region banner*/
+
+.banner-container {
+    display: flex;
+    height: 495px;
+    align-items: center;
+    flex: 1;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+.banner-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--banner-overlay); 
+    z-index: 100;
+}
+.banner-container-text{
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    z-index: 200;
+}
+
+/*#endregion*/
