@@ -1,3 +1,304 @@
 {
-    "services":[]
-  }
+  "services": [
+    {
+      "id": 1,
+      "title": {
+        "ru": "Классический массаж",
+        "en": "Classic Massage"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Расслабляющий массаж всего тела для снятия напряжения и стресса.",
+        "en": "Full-body relaxing massage to relieve tension and stress."
+      },
+      "category": "spa",
+      "price": 35,
+      "duration": 60
+    },
+    {
+      "id": 2,
+      "title": {
+        "ru": "Женская стрижка",
+        "en": "Women's Haircut"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Современная стрижка с учетом структуры волос и формы лица.",
+        "en": "Modern haircut considering hair texture and face shape."
+      },
+      "category": "hair",
+      "price": 25,
+      "duration": 45
+    },
+    {
+      "id": 3,
+      "title": {
+        "ru": "SPA для рук",
+        "en": "Hand SPA"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Комплексный уход: ванночка, пилинг, массаж и маникюр.",
+        "en": "Complete care: soak, peel, massage and manicure."
+      },
+      "category": "nails",
+      "price": 45,
+      "duration": 90
+    },
+    {
+      "id": 4,
+      "title": {
+        "ru": "Кератиновое выпрямление",
+        "en": "Keratin Straightening"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Восстановление структуры волос с эффектом выпрямления на 3 месяца.",
+        "en": "Hair structure restoration with straightening effect for 3 months."
+      },
+      "category": "hair",
+      "price": 80,
+      "duration": 120
+    },
+    {
+      "id": 5,
+      "title": {
+        "ru": "Антицеллюлитный массаж",
+        "en": "Anti-Cellulite Massage"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Курс из 10 процедур для коррекции фигуры и улучшения тонуса кожи.",
+        "en": "Course of 10 procedures for body contouring and skin toning."
+      },
+      "category": "body",
+      "price": 40,
+      "duration": 50
+    },
+    {
+      "id": 6,
+      "title": {
+        "ru": "Вечерний макияж",
+        "en": "Evening Makeup"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Профессиональный макияж для особых случаев с консультацией визажиста.",
+        "en": "Professional makeup for special occasions with artist consultation."
+      },
+      "category": "makeup",
+      "price": 50,
+      "duration": 60
+    },
+    {
+      "id": 7,
+      "title": {
+        "ru": "Глубокое очищение лица",
+        "en": "Deep Facial Cleansing"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Чистка, тонизирование и увлажнение для проблемной кожи.",
+        "en": "Cleansing, toning and moisturizing for problem skin."
+      },
+      "category": "face",
+      "price": 60,
+      "duration": 80
+    },
+    {
+      "id": 8,
+      "title": {
+        "ru": "Мужское бритье",
+        "en": "Men's Shaving"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Классическое опасное бритье с уходом за кожей.",
+        "en": "Classic straight razor shave with skin care."
+      },
+      "category": "barber",
+      "price": 30,
+      "duration": 40
+    },
+    {
+      "id": 9,
+      "title": {
+        "ru": "Парафинотерапия",
+        "en": "Paraffin Therapy"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Уход за кожей рук с теплым парафином для смягчения и питания.",
+        "en": "Hand skin care with warm paraffin for softening and nourishment."
+      },
+      "category": "nails",
+      "price": 20,
+      "duration": 30
+    },
+    {
+      "id": 10,
+      "title": {
+        "ru": "Наращивание ресниц",
+        "en": "Eyelash Extensions"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Объемное наращивание по индивидуальному дизайну.",
+        "en": "Volume extensions with custom design."
+      },
+      "category": "eyelashes",
+      "price": 55,
+      "duration": 90
+    },
+    {
+      "id": 11,
+      "title": {
+        "ru": "Детокс-обертывание",
+        "en": "Detox Wrap"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Выведение токсинов и уменьшение объемов с водорослями.",
+        "en": "Toxin removal and volume reduction with algae."
+      },
+      "category": "body",
+      "price": 42,
+      "duration": 60
+    },
+    {
+      "id": 12,
+      "title": {
+        "ru": "Окрашивание волос",
+        "en": "Hair Coloring"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Стойкое окрашивание премиальными красками без аммиака.",
+        "en": "Long-lasting coloring with premium ammonia-free dyes."
+      },
+      "category": "hair",
+      "price": 70,
+      "duration": 120
+    },
+    {
+      "id": 13,
+      "title": {
+        "ru": "SPA для ног",
+        "en": "Foot SPA"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Пилинг, маска и массаж стоп для снятия усталости.",
+        "en": "Peel, mask and foot massage to relieve fatigue."
+      },
+      "category": "nails",
+      "price": 33,
+      "duration": 50
+    },
+    {
+      "id": 14,
+      "title": {
+        "ru": "Коррекция бровей",
+        "en": "Eyebrow Shaping"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Форма по анатомии лица с окрашиванием хной.",
+        "en": "Anatomical shaping with henna tinting."
+      },
+      "category": "eyebrows",
+      "price": 18,
+      "duration": 30
+    },
+    {
+      "id": 15,
+      "title": {
+        "ru": "Лазерная эпиляция",
+        "en": "Laser Hair Removal"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Удаление волос на зоне бикини (курс из 6 процедур).",
+        "en": "Bikini area hair removal (course of 6 procedures)."
+      },
+      "category": "cosmetology",
+      "price": 95,
+      "duration": 45
+    },
+    {
+      "id": 16,
+      "title": {
+        "ru": "Укладка на свадьбу",
+        "en": "Bridal Hairstyle"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Вечерняя укладка с элементами плетения и фиксацией.",
+        "en": "Evening hairstyle with braiding elements and fixation."
+      },
+      "category": "hair",
+      "price": 60,
+      "duration": 90
+    },
+    {
+      "id": 17,
+      "title": {
+        "ru": "Ботокс для волос",
+        "en": "Hair Botox"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Восстановление поврежденных волос с эффектом ламинирования.",
+        "en": "Damaged hair restoration with lamination effect."
+      },
+      "category": "hair",
+      "price": 75,
+      "duration": 100
+    },
+    {
+      "id": 18,
+      "title": {
+        "ru": "Чистка лица Ultrasonic",
+        "en": "Ultrasonic Facial Cleansing"
+      },
+      "image": "/img/card-image3.png",
+      "description": {
+        "ru": "Аппаратная чистка без повреждения кожи.",
+        "en": "Device-assisted cleansing without skin damage."
+      },
+      "category": "face",
+      "price": 53,
+      "duration": 70
+    },
+    {
+      "id": 19,
+      "title": {
+        "ru": "Мужская стрижка",
+        "en": "Men's Haircut"
+      },
+      "image": "/img/card-image1.png",
+      "description": {
+        "ru": "Стрижка машинкой и ножницами с оформлением бороды.",
+        "en": "Clipper and scissor cut with beard styling."
+      },
+      "category": "barber",
+      "price": 22,
+      "duration": 40
+    },
+    {
+      "id": 20,
+      "title": {
+        "ru": "Голливудское SPA",
+        "en": "Hollywood SPA"
+      },
+      "image": "/img/card-image2.jpg",
+      "description": {
+        "ru": "Комплексный уход с шоколадным обертыванием и массажем.",
+        "en": "Complete care with chocolate wrap and massage."
+      },
+      "category": "spa",
+      "price": 100,
+      "duration": 120
+    }
+  ]
+}
