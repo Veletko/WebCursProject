@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/services.css">
     <script src="/js/baseElements/baseElements.js" type="module" ></script>
+    <script src="/js/services/services.js" type="module"></script>
 </head>
 <body>
     <div class="preloader">
@@ -85,6 +86,27 @@
             <div class="pagination">
                 <a href="#">Next page</a>
             </div>
+            <div class="modal" id="filter-modal">
+                <div class="modal-content">
+                  <span class="close-modal" id="close-modal">&times;</span>
+                  <h2>Filter by Category</h2>
+                  <div class="filter-categories">
+                    <div class="category-group">
+                      <h3>Category</h3>
+                      <label><input type="checkbox" value="spa" class="filter-checkbox"> Spa & Massage</label>
+                    </div>
+                    <div class="category-group">
+                      <h3>Price</h3>
+                      <label><input type="checkbox" value="beauty" class="filter-checkbox"> Hair & Beauty</label>
+                    </div>
+                    <div class="category-group">
+                      <h3>Duration</h3>
+                      <label><input type="checkbox" value="body" class="filter-checkbox"> Body Treatments</label>
+                    </div>
+                  </div>
+                  <button class="card-button" id="apply-filters">Apply Filters</button>
+                </div>
+              </div>
         </section>
     </main>
     <footer>

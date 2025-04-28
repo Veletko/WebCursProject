@@ -166,7 +166,77 @@ option{
 
 /*#endregion*/
 
-@media screen and (max-width: 900px){
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open {
+    display: flex;
+}
+  
+.modal-content {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    width: 95vw;
+    max-width: 600px;
+    max-height: 600px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.modal-content h2{
+    text-align: center;
+    font-size: 3rem;
+}
+.close-modal {
+    position: absolute;
+    top:0;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--black);
+}
+.filter-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+.category-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+.category-group h3 {
+    font-size: 1.8rem;
+  }
+  
+.category-group label {
+    font-size: 1.6rem;
+}
+  
+.modal-content .card-button{
+    width: 100%;
+}
+  
+.modal-content .card-button:hover {
+    background-color: var(--dark-gray);
+}
+body.modal-open {
+    overflow: hidden;
+}
+@media screen and (max-width: 984px){
     .filter-section{
         flex-direction: column;
         justify-content: center;
@@ -177,14 +247,11 @@ option{
     .search-bar{
         order: -1;
     }
-
-}
-@media screen and (max-width: 984px)
-{
     .card{
         width: 310px;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
+
 }
