@@ -1,5 +1,4 @@
 import { allServices, currentPage, renderServicesPage, renderPagination } from "./loadServices.js";
-import { saveFilters } from "./saveFilters.js";
 
 export async function applyFilters() {
     const checkedBoxes = document.querySelectorAll('.filter-checkbox:checked');
@@ -60,14 +59,6 @@ export async function applyFilters() {
             allServices.pop();
         }
         filteredServices.forEach(service => allServices.push(service));
-        
-        saveFilters({
-            categories: selectedCategories,
-            priceFrom,
-            priceTo,
-            timeFrom,
-            timeTo
-        });
         
         renderServicesPage(currentPage);
         renderPagination();
