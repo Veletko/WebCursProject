@@ -84,11 +84,11 @@ function getSortParams(option) {
         case 'Cheap':
             return ['_sort=price', '_order=asc'];
         case 'Expensive':
-            return ['_sort=-price', ''];
+            return ['_sort=price', '_order=desc'];
         case 'NameAsc':
             return ['_sort=title.en', '_order=asc'];
         case 'NameDesc':
-            return ['_sort=-title.en', ''];
+            return ['_sort=-title.en', '_order=desc'];
         default:
             return []; 
     }
