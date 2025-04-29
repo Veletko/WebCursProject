@@ -276,7 +276,9 @@ body.modal-open {
 }
 /*#endregion*/
 
-
+.empty-message {
+    font-size: 4rem;
+}
 @media screen and (max-width: 984px){
     .filter-section{
         flex-direction: column;

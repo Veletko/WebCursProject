@@ -59,6 +59,16 @@ export async function applyFilters() {
         const results = await Promise.all(fetchPromises);
         let filteredServices = results.flat();
 
+        if (filteredServices.length === 0) {
+            const container = document.querySelector('.card-grid');
+            container.innerHTML = `
+                    <p class="empty-message"">Nothing found</p>
+            `;
+            const paginationContainer = document.querySelector('.pagination');
+            paginationContainer.innerHTML = '';
+            return; 
+        }
+
         allServices.length = 0;
         filteredServices.forEach(service => allServices.push(service));
 
