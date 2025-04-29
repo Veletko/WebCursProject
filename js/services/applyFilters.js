@@ -9,6 +9,8 @@ export async function applyFilters() {
     const timeFrom = document.getElementById('duration-from')?.value || '';
     const timeTo = document.getElementById('duration-to')?.value || '';
 
+    const sortSelect = document.querySelector('.filter-options select.card-button');
+    const sortOption = sortSelect ? sortSelect.value : 'Popular';
     const baseQueryParams = [];
 
     if (priceFrom && !isNaN(priceFrom) && priceFrom >= 0) {
@@ -53,11 +55,11 @@ export async function applyFilters() {
 
         const results = await Promise.all(fetchPromises);
 
-        const filteredServices = results.flat();
+        let filteredServices = results.flat();
 
-        while (allServices.length > 0) {
-            allServices.pop();
-        }
+        filteredServices = sortServices(filteredServices, sortOption);
+        allServices.length = 0;
+
         filteredServices.forEach(service => allServices.push(service));
         
         renderServicesPage(currentPage);
@@ -66,5 +68,15 @@ export async function applyFilters() {
     catch (error)
     {
         console.error('Ошибка при применении фильтров:', error, error.stack);
+    }
+}
+function sortServices(services, sortOption) {
+    switch(sortOption) {
+        case 'Cheap':
+            return [...services].sort((a, b) => a.price - b.price);
+        case 'Expensive':
+            return [...services].sort((a, b) => b.price - a.price);
+        default:
+            return services;
     }
 }

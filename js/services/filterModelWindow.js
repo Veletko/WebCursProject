@@ -6,6 +6,7 @@ export function initFiltersModelWindow() {
     const openModalBtn = document.querySelector('.filter-section .card-button:nth-child(2)');
     const closeModalBtn = document.getElementById('close-modal');
     const applyFiltersBtn = document.getElementById('apply-filters');
+    const sortSelect = document.querySelector('.filter-options select.card-button');
 
     openModalBtn.addEventListener('click', async () => {
         modal.classList.add('open');
@@ -23,4 +24,8 @@ export function initFiltersModelWindow() {
         modal.classList.remove('open');
         document.body.classList.remove('modal-open');
     });
+    sortSelect.addEventListener('change', () => {
+        applyFilters(); 
+    });
+
 }
