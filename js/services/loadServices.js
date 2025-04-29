@@ -41,7 +41,7 @@ export function renderServicesPage(page) {
                 <p>${element.price}</p>
                 <p>${element.duration}</p>
                 <p>${element.category}</p>
-                <button class="card-button">Read More</button>
+                <button class="card-button" onclick="location.href='service.html?id=${element.id}'">Read More</button>
             </div>
         `;
     });
