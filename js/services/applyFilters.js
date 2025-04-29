@@ -11,6 +11,7 @@ export async function applyFilters() {
 
     const sortSelect = document.querySelector('.filter-options select.card-button');
     const sortOption = sortSelect ? sortSelect.value : 'Popular';
+
     const baseQueryParams = [];
 
     if (priceFrom && !isNaN(priceFrom) && priceFrom >= 0) {
@@ -26,57 +27,59 @@ export async function applyFilters() {
         baseQueryParams.push(`duration_lte=${encodeURIComponent(timeTo)}`);
     }
 
+    const sortParams = getSortParams(sortOption);
+
     try {
         const fetchPromises = [];
 
         if (selectedCategories.length > 0) {
             selectedCategories.forEach(category => {
-                const queryParams = [...baseQueryParams, `category=${encodeURIComponent(category)}`];
+                const queryParams = [...baseQueryParams, `category=${encodeURIComponent(category)}`, ...sortParams];
                 const query = queryParams.join('&');
                 const url = `http://localhost:3000/services?${query}`;
                 fetchPromises.push(fetch(url).then(res => {
-                    if (!res.ok)
-                    {
+                    if (!res.ok) {
                         throw new Error(`Ошибка HTTP`);
                     }
                     return res.json();
                 }));
             });
         } else {
-            const query = baseQueryParams.join('&');
+            const queryParams = [...baseQueryParams, ...sortParams];
+            const query = queryParams.join('&');
             const url = query ? `http://localhost:3000/services?${query}` : 'http://localhost:3000/services';
             fetchPromises.push(fetch(url).then(res => {
-                if (!res.ok){
+                if (!res.ok) {
                     throw new Error(`Ошибка HTTP`);
-                } 
+                }
                 return res.json();
             }));
         }
 
         const results = await Promise.all(fetchPromises);
-
         let filteredServices = results.flat();
 
-        filteredServices = sortServices(filteredServices, sortOption);
         allServices.length = 0;
-
         filteredServices.forEach(service => allServices.push(service));
-        
+
         renderServicesPage(currentPage);
         renderPagination();
-    } 
-    catch (error)
-    {
+    } catch (error) {
         console.error('Ошибка при применении фильтров:', error, error.stack);
     }
 }
-function sortServices(services, sortOption) {
-    switch(sortOption) {
+
+function getSortParams(option) {
+    switch (option) {
         case 'Cheap':
-            return [...services].sort((a, b) => a.price - b.price);
+            return ['_sort=price', '_order=asc'];
         case 'Expensive':
-            return [...services].sort((a, b) => b.price - a.price);
+            return ['_sort=-price', ''];
+        case 'NameAsc':
+            return ['_sort=title.en', '_order=asc'];
+        case 'NameDesc':
+            return ['_sort=-title.en', ''];
         default:
-            return services;
+            return []; 
     }
 }
