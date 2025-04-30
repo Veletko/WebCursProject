@@ -12,61 +12,45 @@ export async function applyFilters() {
     const sortSelect = document.querySelector('.filter-options select.card-button');
     const sortOption = sortSelect ? sortSelect.value : 'Popular';
 
-    const baseQueryParams = [];
+    const queryParams = [];
 
     if (priceFrom && !isNaN(priceFrom) && priceFrom >= 0) {
-        baseQueryParams.push(`price_gte=${encodeURIComponent(priceFrom)}`);
+        queryParams.push(`price_gte=${encodeURIComponent(priceFrom)}`);
     }
     if (priceTo && !isNaN(priceTo) && priceTo >= 0) {
-        baseQueryParams.push(`price_lte=${encodeURIComponent(priceTo)}`);
+        queryParams.push(`price_lte=${encodeURIComponent(priceTo)}`);
     }
     if (timeFrom && !isNaN(timeFrom) && timeFrom >= 0) {
-        baseQueryParams.push(`duration_gte=${encodeURIComponent(timeFrom)}`);
+        queryParams.push(`duration_gte=${encodeURIComponent(timeFrom)}`);
     }
     if (timeTo && !isNaN(timeTo) && timeTo >= 0) {
-        baseQueryParams.push(`duration_lte=${encodeURIComponent(timeTo)}`);
+        queryParams.push(`duration_lte=${encodeURIComponent(timeTo)}`);
     }
 
     const sortParams = getSortParams(sortOption);
+    queryParams.push(...sortParams);
+
+
+    selectedCategories.forEach(category => {
+        queryParams.push(`category=${encodeURIComponent(category)}`);
+    });
+
+    const query = queryParams.join('&');
+    const url = query ? `http://localhost:3000/services?${query}` : 'http://localhost:3000/services';
 
     try {
-        const fetchPromises = [];
-
-        if (selectedCategories.length > 0) {
-            selectedCategories.forEach(category => {
-                const queryParams = [...baseQueryParams, `category=${encodeURIComponent(category)}`, ...sortParams];
-                const query = queryParams.join('&');
-                const url = `http://localhost:3000/services?${query}`;
-                fetchPromises.push(fetch(url).then(res => {
-                    if (!res.ok) {
-                        throw new Error(`Ошибка HTTP`);
-                    }
-                    return res.json();
-                }));
-            });
-        } else {
-            const queryParams = [...baseQueryParams, ...sortParams];
-            const query = queryParams.join('&');
-            const url = query ? `http://localhost:3000/services?${query}` : 'http://localhost:3000/services';
-            fetchPromises.push(fetch(url).then(res => {
-                if (!res.ok) {
-                    throw new Error(`Ошибка HTTP`);
-                }
-                return res.json();
-            }));
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error(`Ошибка HTTP`);
         }
-
-        const results = await Promise.all(fetchPromises);
-        let filteredServices = results.flat();
+        const filteredServices = await res.json();
 
         if (filteredServices.length === 0) {
             const container = document.querySelector('.card-grid');
-            container.innerHTML = `
-                    <p class="empty-message"">Nothing found</p>
-            `;
+            container.innerHTML = `<p class="empty-message">Nothing found</p>`;
             const paginationContainer = document.querySelector('.pagination');
             paginationContainer.innerHTML = '';
-            return; 
+            return;
         }
 
         allServices.length = 0;
@@ -88,8 +72,8 @@ function getSortParams(option) {
         case 'NameAsc':
             return ['_sort=title.en', '_order=asc'];
         case 'NameDesc':
-            return ['_sort=-title.en', '_order=desc'];
+            return ['_sort=title.en', '_order=desc'];
         default:
-            return []; 
+            return [];
     }
 }
