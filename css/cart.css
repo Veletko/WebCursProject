@@ -1,7 +1,7 @@
 h1 {
     color: #FFF;
     text-align: center;
-    font-family: "Playfair";
+    font-family: "Playfair Display";
     font-size: 5.5rem;
     font-style: normal;
     font-weight: 700;
@@ -113,8 +113,8 @@ h1 {
     cursor: pointer;
 }
 .service-img{
-    width: 539px;
-    height: 685px;
+    width: 300px;
+    height: 300px;
 }
 /*#endregion*/
 
