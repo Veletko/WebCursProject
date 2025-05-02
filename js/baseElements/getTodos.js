@@ -3,7 +3,7 @@ export async function getTodos(query = '', endpoint = 'http://localhost:3000') {
       
       const queryString = query ? `?${query}` : '';
       const response = await fetch(`${endpoint}${queryString}`);
-  
+
       if (!response.ok) throw new Error(response.statusText);
   
       const json = await response.json();

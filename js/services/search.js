@@ -18,7 +18,7 @@ export async function initSearch() {
             
             allServices.length = 0; 
             services.forEach(service => allServices.push(service)); 
-            console.log(allServices.length)
+
             renderServicesPage(currentPage);
             renderPagination();
         }
