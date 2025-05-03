@@ -6,6 +6,7 @@ export async function deleteFromCart(userId, serviceId) {
         const user = await userRes.json();
 
         const updatedCart = user.cart.filter(id => id !== serviceId);
+        
         await fetch(`http://localhost:3000/users/${userId}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -21,6 +22,9 @@ export async function loadDeleteFunction(userId, serviceId, button) {
     button.addEventListener('click', async (e) => {
         e.preventDefault();
         await deleteFromCart(userId, serviceId);
+        if (button.classList.contains('buy')) {
+            alert("item purchased successfully");
+        }
     });
 }
   

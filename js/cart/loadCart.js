@@ -41,7 +41,7 @@ export function renderCartItems(userId, services) {
           <span class="service-price">Price: ${service.price}$</span>
           <span class="service-duration">Duration: ${service.duration}min</span>
         </div>
-        <button class="card-button">Buy now</button>
+        <button class="card-button buy">Buy now</button>
         <button class="card-button delete-btn">Delete item</button>
       </div>
     `;
@@ -49,6 +49,10 @@ export function renderCartItems(userId, services) {
 
     const deleteButton = card.querySelector('.delete-btn');
     loadDeleteFunction(userId, service.id, deleteButton);
+
+    const buyButton = card.querySelector('.buy');
+    loadDeleteFunction(userId,service.id,buyButton);
+
   });
   const price = document.querySelector(".price");
   price.innerHTML = '';
