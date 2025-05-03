@@ -18,10 +18,9 @@ export async function deleteFromCart(userId, serviceId) {
     }
 }
 export async function loadDeleteFunction(userId, serviceId, button) {
-    button.addEventListener('click', async () => {
-      await deleteFromCart(userId, serviceId);
-  
-      renderCartItems(userId, updatedServices);
+    button.addEventListener('click', async (e) => {
+        e.preventDefault();
+        await deleteFromCart(userId, serviceId);
     });
 }
   

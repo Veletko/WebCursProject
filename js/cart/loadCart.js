@@ -17,9 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch(`http://localhost:3000/services/${id}`).then(res => res.json())
         )
     );
-
+    
     renderCartItems(userId, services);
-
 });
   
 export function renderCartItems(userId, services) {
@@ -51,6 +50,12 @@ export function renderCartItems(userId, services) {
     const deleteButton = card.querySelector('.delete-btn');
     loadDeleteFunction(userId, service.id, deleteButton);
   });
+  const price = document.querySelector(".price");
+  price.innerHTML = '';
+
+  price.innerHTML = `
+    <p class = "service-title">Overall prce: ${services.reduce((sum, c) => sum + c.price, 0)} $</p>
+  `
 }
 
   
