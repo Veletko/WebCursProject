@@ -47,6 +47,7 @@ h1 {
 /*#region cards*/
 
 .service-container {
+    justify-content: center;
     display: flex;
     padding: 128px 18.75vw 127px 18.75vw;
     gap: 127px;
@@ -117,4 +118,21 @@ h1 {
     height: 685px;
 }
 /*#endregion*/
-
+@media screen and (max-width: 1000px){
+    .service-container{
+        flex-direction: column;
+        align-items: center;
+        padding: 128px 5vw 127px 5vw;
+        gap: 50px;
+    }
+    .service-img{
+        max-width: 650px;
+        width: 95vw;
+        height: 300px;
+    }
+    .service-info{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

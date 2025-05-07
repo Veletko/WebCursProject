@@ -1,9 +1,6 @@
-export async function deleteFromCart(userId, serviceId) {
+export async function cleanCart(userId) {
     try {
-        const userRes = await fetch(`http://localhost:3000/users/${userId}`);
-        const user = await userRes.json();
-
-        const updatedCart = user.cart.filter(id => id !== serviceId);
+        const updatedCart = [];
         
         await fetch(`http://localhost:3000/users/${userId}`, {
             method: 'PATCH',
@@ -16,13 +13,10 @@ export async function deleteFromCart(userId, serviceId) {
         throw error; 
     }
 }
-export async function loadDeleteFunction(userId, serviceId, button) {
+export async function loadCleanFunction(userId, button) {
     button.addEventListener('click', async (e) => {
         e.preventDefault();
-        await deleteFromCart(userId, serviceId);
-        if (button.classList.contains('buy')) {
-            alert("item purchased successfully");
-        }
+        await cleanCart(userId);
     });
 }
   

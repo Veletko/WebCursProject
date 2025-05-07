@@ -1,5 +1,6 @@
-
+import {loadCleanFunction} from './cleanCart.js';
 import { loadDeleteFunction} from "./deleteItemFromCart.js";
+
 document.addEventListener('DOMContentLoaded', async () => {
     const userId = 1; 
     const userRes = await fetch(`http://localhost:3000/users/${userId}`);
@@ -33,16 +34,16 @@ export function renderCartItems(userId, services) {
       <img class="service-img" src="${service.image}" alt="service">
       <div class="service-info">
         <div>
-          <h3 class="service-category">${service.category}</h3>
           <h2 class="service-title">${service.title.en}</h2>
-          <p class="service-description">${service.description.en}</p>
         </div>
         <div>
           <span class="service-price">Price: ${service.price}$</span>
           <span class="service-duration">Duration: ${service.duration}min</span>
         </div>
-        <button class="card-button buy">Buy now</button>
-        <button class="card-button delete-btn">Delete item</button>
+      </div>
+      <div class='button-container'>
+          <button class="card-button buy">Buy now</button>
+          <button class="card-button delete-btn">Delete item</button>
       </div>
     `;
     container.appendChild(card);
@@ -59,7 +60,17 @@ export function renderCartItems(userId, services) {
 
   price.innerHTML = `
     <p class = "service-title">Overall prce: ${services.reduce((sum, c) => sum + c.price, 0)} $</p>
-  `
+  `;
+
+  const deleteAllServices = document.querySelector(".clean-cart")
+  deleteAllServices.innerHTML = ``;
+
+  deleteAllServices.innerHTML = `
+   <button class = "card-button clean-button">Clean basket</button>
+  `;
+  const cleanButton = document.querySelector(".clean-button");
+  loadCleanFunction(userId, cleanButton);
+  
 }
 
   
