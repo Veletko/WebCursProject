@@ -16,10 +16,6 @@ export async function initServices() {
         renderPagination();
     } catch (error) {
         console.error("Ошибка при загрузке сервисов:", error);
-        const container = document.querySelector('.card-grid');
-        if (container) {
-            container.innerHTML = '<p>Error loading services. Please try again.</p>';
-        }
     }
 }
 

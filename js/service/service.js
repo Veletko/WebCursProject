@@ -1,4 +1,4 @@
-import { addToCart } from "../cart/addToCart.js";
+import { addToCart } from "./addToCart.js";
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');

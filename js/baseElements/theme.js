@@ -8,10 +8,10 @@ export function initThemeToggle() {
     }
 
     function loadTheme() {
-        const savedTheme = localStorage.getItem("theme") || "light";
+        const savedTheme = localStorage.getItem("theme");
         setTheme(savedTheme);
         if (themeCheckbox) {
-            themeCheckbox.checked = savedTheme === "dark";
+            themeCheckbox.checked = (savedTheme === "dark");
         }
     }
 
