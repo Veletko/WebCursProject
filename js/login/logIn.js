@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/login', {
+                const response = await fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (user.role === 'admin') {
                     window.location.href = '/admin.html';
                 } else {
-                    window.location.href = 'homepage.html';
+                    window.location.href = '/pages/homepage.html';
                 }
             } catch (error) {
                 console.error('Login error:', error);
