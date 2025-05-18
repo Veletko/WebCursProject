@@ -95,6 +95,9 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+#admin-link{
+    display: block;
+}
 @keyframes spin {
     to { transform: rotate(360deg); }
 }

@@ -1,7 +1,11 @@
 import { initThemeToggle } from './theme.js';
 import { initPreloader } from './preloader.js';
+import { checkAuth } from './loginCheck.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    initPreloader();
+export function initBaseElements() {
     initThemeToggle();
-});
+    initPreloader();
+    checkAuth();
+}
+
+document.addEventListener('DOMContentLoaded', initBaseElements);

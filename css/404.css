@@ -1,0 +1,116 @@
+h3{
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 154.5%;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+h1{
+    color: #FFF;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.55px;
+}
+.banner-container {
+    display: flex;
+    height: 495px;
+    align-items: center;
+    flex: 1;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+.banner-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--banner-overlay); 
+    z-index: 100;
+}
+
+.banner-container-text{
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    z-index: 200;
+}
+.section-404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 39px;
+    height: 1047px;
+    background-image: url("../img/404.jpg");
+}
+.text-404{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.text-404 h3{
+    color: #141414;
+    text-align: center;
+    font-family: "Playfair";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 52px */
+    letter-spacing: -0.8px;
+}
+.text-404 p{
+    color: gray;
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 30.4px */
+    letter-spacing: -0.19px;
+    max-width: 563px;
+}
+h2{
+    font-family: 'Manrope';
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #7A9CA5;
+    filter: drop-shadow(4px 5px 6px rgba(146, 146, 146, 0.50));
+}
+.banner-button{
+    display: flex;
+    width: 250px;
+    height: 65px;
+    background-color: var(--accent-dark);
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope';
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 125%; /* 17.5px */
+    font-weight: 800;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 500px){
+    h2{
+        font-size: 15rem;
+    }
+}
