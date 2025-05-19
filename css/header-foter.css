@@ -375,6 +375,12 @@ footer {
     .burger-menu {
         display: block;
     }
+    .theme-toggle.element{
+        display: none;
+    }
+    .language-selector.element {
+        display: none;
+    }
     /*end of header*/
 }
 
@@ -401,16 +407,10 @@ footer {
     .reserv-button {
         display: none;
     }
-    .language-selector {
-        display: none;
-    }
-    .theme-toggle {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 640px) {
-    .visually-impaired-button {
+    .visually-impaired-button.element {
         display: none;
     }
     .basket {
@@ -418,3 +418,98 @@ footer {
     }
 }
 /*#endregion*/
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding: 80px 30px 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--black);
+    z-index: 1001;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: auto;
+}
+
+.mobile-nav a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent);
+}
+
+.mobile-menu-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.mobile-reserv {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.4rem;
+}
+
+.mobile-menu .theme-toggle {
+    margin: 15px 0;
+}
+
+.mobile-language-selector {
+    margin-top: 15px;
+}
+
+body.menu-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+@media screen and (max-width: 640px) {
+    .mobile-menu {
+        width: 100%;
+    }
+    
+    .mobile-menu-close {
+        right: 25px;
+        top: 25px;
+    }
+}
