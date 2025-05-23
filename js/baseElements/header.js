@@ -5,6 +5,8 @@ export function initHeader(placeholderId = 'header-placeholder') {
         return;
     }
 
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    
     const headerHtml = `
         <div class="header-logo-container">
             <img src="/img/Logo.svg" alt="logo" class="logo logo-light">
@@ -35,6 +37,8 @@ export function initHeader(placeholderId = 'header-placeholder') {
                 <a href="/pages/login.html">Log in</a>
                 <a href="/pages/homepage.html">Home</a>
                 <a href="/pages/services.html">Services</a>
+                ${isAdmin ? '<a href="/pages/admin.html" id="admin-link">Admin</a>' : ''}
+                <a href="/pages/personalAccount.html">Personal Account</a>
             </nav>
             <button class="burger-menu">
                 <span></span>
