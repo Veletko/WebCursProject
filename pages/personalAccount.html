@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Account</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header-foter.css">
+    <link rel="stylesheet" href="/css/personalAccount.css">
+    <script src="/js/baseElements/baseElements.js" type="module"></script>
+    <script src="/js/personalAccount/personalAccount.js" type="module"></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-content"></div>
+    </div>
+    <header id="header-placeholder"></header>
+    <div id="mobile-menu-placeholder"></div>
+    <main>
+        <section class="account-container">
+            <div class="account-header">
+                <h3>Your beauty profile</h3>
+                <h1>Personal account</h1>
+            </div>
+
+            <div class="account-content">
+                <div class="account-avatar">
+                    <img src="/img/beauty-experts.png" alt="avatar" id="user-avatar">
+                </div>
+
+                <div class="account-details">
+                    <div class="account-section">
+                        <h3>Personal Information</h3>
+                        <div class="input-wrapper">
+                            <label for="nickname">Nickname:</label>
+                            <input type="text" id="nickname" class="card-input">
+                            <span class="error-message" id="nickname-error"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="card-input">
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="second_name">Second Name:</label>
+                            <input type="text" id="second_name" class="card-input">
+                            <span class="error-message" id="second_name-error"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="surname">Surname:</label>
+                            <input type="text" id="surname" class="card-input">
+                            <span class="error-message" id="surname-error"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="date_of_birth">Date of Birth:</label>
+                            <input type="text" id="date_of_birth" class="card-input" placeholder="дд.мм.гггг">
+                            <span class="error-message" id="date_of_birth-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="account-section">
+                        <h3>Contact Information</h3>
+                        <div class="input-wrapper">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" class="card-input">
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" class="card-input" placeholder="+375xxxxxxxxx">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="account-section">
+                        <h3>Security</h3>
+                        <div class="input-wrapper">
+                            <button class="change-password-btn" id="change-password-btn">
+                                Change Password
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="account-actions">
+                        <button class="save-btn card-button" id="save-changes" disabled>Save Changes</button>
+                        <button class="logout-btn" id="logout-button">Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+</body>
+</html>
