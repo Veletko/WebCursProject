@@ -1,7 +1,6 @@
-import { showError, clearError } from "../register/validationForRegistration.js"
+import {clearError, showError} from "/js/register/validationForRegistration.js"
 
 document.addEventListener('DOMContentLoaded', () => {
-    checkAdminStatus();
     
     const loginForm = document.querySelector('.auth-form');
     const submitButton = document.getElementById('submit-button');
@@ -27,34 +26,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ nickname, password }),
-                });
+
+                const response = await fetch(`http://localhost:3000/users?nickname=${encodeURIComponent(nickname)}`);
                 
                 if (!response.ok) {
-                    throw new Error('Login failed');
+                    throw new Error('Failed to fetch user data');
                 }
                 
-                const user = await response.json();
+                const users = await response.json();
+
+                if (users.length !== 1) {
+                    throw new Error('Invalid nickname or password');
+                }
                 
-                localStorage.setItem('currentUser', JSON.stringify({
-                    id: user.id,
-                    nickname: user.nickname,
-                    role: user.role
-                }));
+                const user = users[0];
                 
 
-                updateAdminStatus(user.role === 'admin');
+                if (user.password !== password) {
+                    throw new Error('Invalid nickname or password');
+                }
                 
                 if (user.role === 'admin') {
-                    window.location.href = '/admin.html';
+                    localStorage.setItem('currentUser', JSON.stringify({
+                    id: user.id,
+                    nickname: user.nickname,
+                    role: user.role,
+                    isAdmin: true
+                        }));
+                    window.location.href = '/pages/admin.html';
                 } else {
+                    localStorage.setItem('currentUser', JSON.stringify({
+                    id: user.id,
+                    nickname: user.nickname,
+                    role: user.role,
+                    isAdmin: false
+                        }));
                     window.location.href = '/pages/homepage.html';
                 }
+                
+                
+                
             } catch (error) {
                 console.error('Login error:', error);
                 showError('password', 'Invalid nickname or password');
@@ -62,29 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-function checkAdminStatus() {
-    const userData = localStorage.getItem('currentUser');
-    if (!userData) return;
-
-    try {
-        const user = JSON.parse(userData);
-        updateAdminStatus(user.role === 'admin');
-    } catch (e) {
-        console.error('Error parsing user data:', e);
-    }
-}
-
-
-function updateAdminStatus(isAdmin) {
-    const adminLink = document.getElementById('admin-link');
-    if (adminLink) {
-        adminLink.style.display = isAdmin ? 'block' : 'none';
-    }
-    
-    if (isAdmin) {
-        localStorage.setItem('isAdmin', 'true');
-    } else {
-        localStorage.removeItem('isAdmin');
-    }
-}
