@@ -5,7 +5,8 @@ export function initHeader(placeholderId = 'header-placeholder') {
         return;
     }
 
-    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    const user = JSON.parse(localStorage.getItem('currentUser')) || {};
+    const isAdmin = user.isAdmin === true;
     
     const headerHtml = `
         <div class="header-logo-container">

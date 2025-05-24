@@ -4,8 +4,9 @@ export function initMobileMenu(placeholderId = 'mobile-menu-placeholder') {
         console.error(`Mobile menu placeholder with ID "${placeholderId}" not found.`);
         return;
     }
-    
-    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+
+    const user = JSON.parse(localStorage.getItem('currentUser')) || {};
+    const isAdmin = user.isAdmin === true;
     
     placeholder.innerHTML = `
         <div class="mobile-menu" id="mobile-menu">
