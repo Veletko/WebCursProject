@@ -1,5 +1,5 @@
 import { getTodos } from "../baseElements/getTodos.js";
-
+import { getCurrentLanguage,applyTranslations } from "../baseElements/languageService.js";
 export let allServices = [];
 export const itemsPerPage = 6; 
 export let currentPage = 1;
@@ -21,28 +21,46 @@ export async function initServices() {
 
 export function renderServicesPage(page) {
     const container = document.querySelector('.card-grid');
+    if (!container) return;
     container.innerHTML = '';
-
-    currentPage = page; 
+    const currentLang = getCurrentLanguage();
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     const servicesToShow = allServices.slice(start, end);
 
-    servicesToShow.forEach(element => {
+    servicesToShow.forEach(service => {
+        const title = getLocalizedText(service.title, currentLang);
+        const description = getLocalizedText(service.description, currentLang);
+        
         container.innerHTML += `
             <div class="card">
-                <img src="${element.image}" alt="service">
-                <h3>${element.title.en}</h3>
-                <p>${element.description.en}</p>
-                <p>${element.price}</p>
-                <p>${element.duration}</p>
-                <p>${element.category}</p>
-                <button class="card-button" onclick="location.href='service.html?id=${element.id}'">Read More</button>
+                <img src="${service.image}" alt="${title}" data-i18n="[alt]service.imageAlt">
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <p><span data-i18n="service.details.price"></span>${service.price}</p>
+                <p><span data-i18n="service.details.duration"></span>${service.duration} <span data-i18n="service.time.minutes"></span></p>
+                <p><span data-i18n="service.details.category"></span>${service.category}</p>
+                <button class="card-button" 
+                        data-service-id="${service.id}" 
+                        data-i18n="service.buttons.readMore"
+                        onclick="location.href='service.html?id=${service.id}'">
+                    Read More
+                </button>
             </div>
         `;
     });
 
-    renderPagination(); 
+    applyTranslations(container);
+    renderPagination();
+}
+
+function getLocalizedText(textObj, lang) {
+    if (!textObj) return '';
+    if (typeof textObj === 'string') return textObj;
+    if (typeof textObj === 'object') {
+        return textObj[lang] || textObj.en || '';
+    }
+    return '';
 }
 
 export function renderPagination() {

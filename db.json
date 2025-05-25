@@ -1,64 +1,17 @@
 {
   "services": [
     {
-      "id": 1,
-      "title": {
-        "ru": "Классический массаж",
-        "en": "Classic Massage"
-      },
-      "image": "/img/card-image1.png",
-      "description": {
-        "ru": "Расслабляющий массаж всего тела для снятия напряжения и стресса.",
-        "en": "Full-body relaxing massage to relieve tension and stress."
-      },
-      "category": "spa",
-      "price": 35,
-      "duration": 60
-    },
-    {
-      "id": 2,
-      "title": {
-        "ru": "Женская стрижка",
-        "en": "Women's Haircut"
-      },
-      "image": "/img/card-image2.jpg",
-      "description": {
-        "ru": "Современная стрижка с учетом структуры волос и формы лица.",
-        "en": "Modern haircut considering hair texture and face shape."
-      },
-      "category": "hair",
-      "price": 25,
-      "duration": 45
-    },
-    {
-      "id": 3,
-      "title": {
-        "ru": "SPA для рук",
-        "en": "Hand SPA"
-      },
-      "image": "/img/card-image3.png",
-      "description": {
-        "ru": "Комплексный уход: ванночка, пилинг, массаж и маникюр.",
-        "en": "Complete care: soak, peel, massage and manicure."
-      },
-      "category": "nails",
-      "price": 45,
-      "duration": 90
-    },
-    {
       "id": 4,
       "title": {
-        "ru": "Кератиновое выпрямление",
         "en": "Keratin Straightening"
       },
       "image": "/img/card-image1.png",
       "description": {
-        "ru": "Восстановление структуры волос с эффектом выпрямления на 3 месяца.",
         "en": "Hair structure restoration with straightening effect for 3 months."
       },
       "category": "hair",
-      "price": 80,
-      "duration": 120
+      "price": "800",
+      "duration": "120"
     },
     {
       "id": 5,
@@ -241,21 +194,6 @@
       "duration": 90
     },
     {
-      "id": 17,
-      "title": {
-        "ru": "Ботокс для волос",
-        "en": "Hair Botox"
-      },
-      "image": "/img/card-image2.jpg",
-      "description": {
-        "ru": "Восстановление поврежденных волос с эффектом ламинирования.",
-        "en": "Damaged hair restoration with lamination effect."
-      },
-      "category": "hair",
-      "price": 75,
-      "duration": 100
-    },
-    {
       "id": 18,
       "title": {
         "ru": "Чистка лица Ultrasonic",
@@ -286,25 +224,203 @@
       "duration": 40
     },
     {
-      "id": 20,
       "title": {
-        "ru": "Голливудское SPA",
-        "en": "Hollywood SPA"
+        "en": "sdfsd"
       },
-      "image": "/img/card-image2.jpg",
       "description": {
-        "ru": "Комплексный уход с шоколадным обертыванием и массажем.",
-        "en": "Complete care with chocolate wrap and massage."
+        "en": "asdf"
       },
-      "category": "spa",
-      "price": 100,
-      "duration": 120
+      "price": "3",
+      "duration": "3",
+      "category": "sdf",
+      "image": "https://data.cyclowiki.org/images/a/a8/Google_%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png",
+      "id": 20
     }
   ],
   "users": [
     {
       "id": 1,
-      "cart": [1,2,3,4,5,6,7,8,9,10]
+      "cart": [5,6,7],
+      "nickname": "adminKing",
+      "name": "Alex",
+      "surname": "Smith",
+      "second_name": "John",
+      "email": "admin.smith@example.com",
+      "phone": "+1234567890",
+      "date_of_birth": "1985-03-15",
+      "password": "admin123!",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "cart": [
+        4,
+        8,
+        9,
+        11,
+        18,
+        3
+      ],
+      "nickname": "sunnyGirl",
+      "name": "Emma",
+      "surname": "Johnson",
+      "second_name": "Marie",
+      "email": "emma.johnson@example.com",
+      "phone": "+375348374391",
+      "date_of_birth": "22.12.2003",
+      "password": "emma1990",
+      "role": "normal_user"
+    },
+    {
+      "id": 3,
+      "cart": [
+        2,
+        6,
+        10,
+        14,
+        19
+      ],
+      "nickname": "coolGuy",
+      "name": "Michael",
+      "surname": "Brown",
+      "second_name": "David",
+      "email": "michael.brown@example.com",
+      "phone": "+1234567892",
+      "date_of_birth": "1988-11-30",
+      "password": "mike88",
+      "role": "normal_user"
+    },
+    {
+      "id": 4,
+      "cart": [
+        5,
+        7,
+        13,
+        16
+      ],
+      "nickname": "starLight",
+      "name": "Sophia",
+      "surname": "Davis",
+      "second_name": "Anne",
+      "email": "sophia.davis@example.com",
+      "phone": "+1234567893",
+      "date_of_birth": "1995-02-14",
+      "password": "sophia95",
+      "role": "normal_user"
+    },
+    {
+      "id": 5,
+      "cart": [
+        3,
+        9,
+        12,
+        15,
+        17
+      ],
+      "nickname": "blueSky",
+      "name": "James",
+      "surname": "Wilson",
+      "second_name": "Thomas",
+      "email": "james.wilson@example.com",
+      "phone": "+1234567894",
+      "date_of_birth": "1992-09-05",
+      "password": "james92",
+      "role": "normal_user"
+    },
+    {
+      "id": 6,
+      "cart": [
+        4,
+        8,
+        11,
+        14,
+        19
+      ],
+      "nickname": "happyDay",
+      "name": "Olivia",
+      "surname": "Martinez",
+      "second_name": "Grace",
+      "email": "olivia.martinez@example.com",
+      "phone": "+1234567895",
+      "date_of_birth": "1993-04-25",
+      "password": "olivia93",
+      "role": "normal_user"
+    },
+    {
+      "id": 7,
+      "cart": [
+        2,
+        5,
+        10,
+        13,
+        18
+      ],
+      "nickname": "greenLeaf",
+      "name": "William",
+      "surname": "Taylor",
+      "second_name": "Henry",
+      "email": "william.taylor@example.com",
+      "phone": "+1234567896",
+      "date_of_birth": "1987-06-10",
+      "password": "will87",
+      "role": "normal_user"
+    },
+    {
+      "id": 8,
+      "cart": [
+        3,
+        6,
+        9,
+        15,
+        21
+      ],
+      "nickname": "moonLight",
+      "name": "Ava",
+      "surname": "Anderson",
+      "second_name": "Rose",
+      "email": "ava.anderson@example.com",
+      "phone": "+1234567897",
+      "date_of_birth": "1996-12-01",
+      "password": "ava96",
+      "role": "normal_user"
+    },
+    {
+      "id": 9,
+      "cart": [
+        4,
+        7,
+        12,
+        16,
+        21
+      ],
+      "nickname": "fireStorm",
+      "name": "Ethan",
+      "surname": "Thomas",
+      "second_name": "Charles",
+      "email": "ethan.thomas@example.com",
+      "phone": "+1234567898",
+      "date_of_birth": "1991-08-19",
+      "password": "ethan91",
+      "role": "normal_user"
+    },
+    {
+      "id": 10,
+      "cart": [
+        21,
+        5,
+        8,
+        11,
+        17
+      ],
+      "nickname": "goldenSun",
+      "name": "Isabella",
+      "surname": "Jackson",
+      "second_name": "Faith",
+      "email": "isabella.jackson@example.com",
+      "phone": "+1234567899",
+      "date_of_birth": "1994-03-27",
+      "password": "isabella94",
+      "role": "normal_user"
     }
   ]
 }

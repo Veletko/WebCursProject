@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title data-i18n="service.pageTitle">Document</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/service.css">
     <script src="/js/baseElements/baseElements.js" type="module" ></script>
     <script src="\js\service\service.js" type="module"></script>
-
 </head>
 <body>
     <div class="preloader">
@@ -20,106 +19,27 @@
     <main>
         <section class="banner-container">
             <div class="banner-container-text">
-                <h3>THE SERVICE</h3>
-                <h1>Beauty Service</h1>
+                <h3 data-i18n="service.banner.subtitle">THE SERVICE</h3>
+                <h1 data-i18n="service.banner.title">Beauty Service</h1>
             </div>
         </section>
         <section class="service-container">
-            <img class="service-img" src="" alt="service">
+            <img class="service-img" src="" alt="service" data-i18n="[alt]service.imageAlt">
             <div class="service-info">
                 <div>
-                    <h3 class="service-category"></h3>
-                    <h2 class="service-title"></h2>
-                    <p class="service-description"></p>
+                    <h3 class="service-category" data-i18n="service.details.category"></h3>
+                    <h2 class="service-title" data-i18n="service.details.title"></h2>
+                    <p class="service-description" data-i18n="service.details.description"></p>
                 </div>
                 <div>
-                    <span class="service-price"></span>
-                    <span class="service-duration"></span>
+                    <span class="service-price" data-i18n="service.details.price"></span>
+                    <span class="service-duration" data-i18n="service.details.duration"></span>
                 </div>
-                <button class="card-button">Buy now</button>
-                <button type="button"class="card-button">add to cart</button>
+                <button class="card-button" data-i18n="service.buttons.buyNow">Buy now</button>
+                <button type="button" class="card-button" data-i18n="service.buttons.addToCart">add to cart</button>
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-top-container">
-            <div class="footer-top-logo-container">
-                <img class="footer-logo-img" src="/img/Logo_black.svg" alt="logo">
-                <div class="footer-img-container">
-                    <div class="footer-img" >
-                        <img src="/img/facebook_white.png" alt="facebook">
-                    </div>
-                    <div class="footer-img" >
-                        <img src="/img/X_white.png" alt="X">
-                    </div>
-                    <div class="footer-img">
-                        <img src="/img/in_white.png" alt="in">
-                    </div>
-                    <div class="footer-img" >
-                        <img  src="/img/instagram_white.png" alt="instagram">
-                    </div>
-                </div>
-            </div>
-            <hr class="footer-line">
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Explore</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Appointments</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Utility Pages</h4>
-                    <ul>
-                        <li><a href="#">Start here</a></li>
-                        <li><a href="#">Style guide</a></li>
-                        <li><a href="#">404 not found</a></li>
-                        <li><a href="#">Password protected</a></li>
-                        <li><a href="#">Licenses</a></li>
-                        <li><a href="#">Changelog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Keep in Touch</h4>
-                    <ul>
-                        <li>
-                            <div class="footer-column-text">
-                                <span>Address:</span>
-                                <span>24A Kingston St, Los Vegas NC 28202, USA.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="footer-column-text">
-                                <span>Mail :</span>
-                                <span>support@doctors.com</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="footer-column-text">
-                                <span>Phone :</span>
-                                <span>(+22) 123 - 4567 - 900</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Working Hours</h4>
-                    <ul>
-                        <li><span>Mon to Fri: 7am - 6pm</span></li>
-                        <li><span>Sat: 9am - 7pm</span></li>
-                        <li><span>Sun: 9am - 6pm</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-button-container">
-            <p>Copyright 2021. Drafted by Victor Themes.</p>
-        </div>
-    </footer>
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { allServices, renderAdminPage, currentPage } from "./loadServicesForAdmin.js";
+import { allServices, renderAdminPage, currentAdminPage } from "./loadServicesForAdmin.js";
 
 const addModal = document.getElementById('add-modal');
 const addForm = document.getElementById('add-service-form');
@@ -83,7 +83,7 @@ if (addForm) {
             await handleServiceCreate(newData);
             alert('Service created successfully!');
             closeAddModal();
-            renderAdminPage(currentPage);
+            renderAdminPage(currentAdminPage);
         } catch (error) {
             alert(`Error: ${error.message}`);
         }

@@ -1,4 +1,4 @@
-import { currentPage,allServices, renderAdminPage, renderPagination } from "./loadServicesForAdmin.js";
+import { currentAdminPage,allServices, renderAdminPage, renderPagination } from "./loadServicesForAdmin.js";
 import { getTodos } from "../baseElements/getTodos.js";
 export async function initAdminSearch() {
     const searchInput = document.querySelector('.search-bar input');
@@ -19,7 +19,7 @@ export async function initAdminSearch() {
             allServices.length = 0; 
             services.forEach(service => allServices.push(service)); 
 
-            renderAdminPage(currentPage);
+            renderAdminPage(currentAdminPage);
             renderPagination();
         }
         catch{

@@ -1,12 +1,13 @@
 import { loadCleanFunction } from './cleanCart.js';
 import { loadDeleteFunction } from './deleteItemFromCart.js';
+import { getCurrentLanguage, applyTranslations} from '../baseElements/languageService.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser || !currentUser.id) {
         const container = document.querySelector('.cart-container');
-        container.innerHTML = '<p class="service-title">Ошибка: пользователь не найден</p>';
+        container.innerHTML = '<p class="service-title" data-i18n="cart.errorUser"></p>';
+        applyTranslations();
         return;
     }
     const userId = currentUser.id;
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (!user.cart || user.cart.length === 0) {
             const container = document.querySelector('.cart-container');
-            container.innerHTML = '<p class="service-title">Ваша корзина пуста</p>';
+            container.innerHTML = '<p class="service-title" data-i18n="cart.emptyCart"></p>';
+            applyTranslations();
             return;
         }
 
@@ -37,7 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error fetching user or services:', error);
         const container = document.querySelector('.cart-container');
-        container.innerHTML = '<p class="service-title">Ошибка загрузки корзины</p>';
+        container.innerHTML = '<p class="service-title" data-i18n="cart.errorLoad"></p>';
+        applyTranslations();
     }
 });
 
@@ -45,24 +48,30 @@ export function renderCartItems(userId, services) {
     const container = document.querySelector('.cart-container');
     container.innerHTML = '';
 
+    const currentLang = getCurrentLanguage();
+
     services.forEach(service => {
         const card = document.createElement('div');
         card.classList.add('service-container');
 
+        const serviceTitle = typeof service.title === 'object' 
+            ? service.title[currentLang] || service.title.en || 'No title'
+            : service.title || 'No title';
+
         card.innerHTML = `
-            <img class="service-img" src="${service.image}" alt="service">
+            <img class="service-img" src="${service.image}" alt="${serviceTitle}" data-i18n="[alt]cart.itemAlt">
             <div class="service-info">
                 <div>
-                    <h2 class="service-title">${service.title.en}</h2>
+                    <h2 class="service-title">${serviceTitle}</h2>
                 </div>
                 <div>
-                    <span class="service-price">Price: ${service.price}$</span>
-                    <span class="service-duration">Duration: ${service.duration}min</span>
+                    <span class="service-price"><span data-i18n="cart.priceLabel"></span> ${service.price}$</span>
+                    <span class="service-duration"><span data-i18n="cart.durationLabel"></span> ${service.duration}<span data-i18n="cart.minutes"></span></span>
                 </div>
             </div>
             <div class="button-container">
-                <button class="card-button buy">Buy now</button>
-                <button class="card-button delete-btn">Delete item</button>
+                <button class="card-button buy" data-i18n="cart.buyButton">Buy now</button>
+                <button class="card-button delete-btn" data-i18n="cart.deleteButton">Delete item</button>
             </div>
         `;
         container.appendChild(card);
@@ -80,14 +89,16 @@ export function renderCartItems(userId, services) {
 
     const price = document.querySelector('.price');
     price.innerHTML = `
-        <p class="service-title">Overall price: ${totalPrice.toFixed(2)}$</p>
+        <p class="service-title"><span data-i18n="cart.totalPrice"></span> ${totalPrice.toFixed(2)}$</p>
     `;
 
     const deleteAllServices = document.querySelector('.clean-cart');
     deleteAllServices.innerHTML = `
-        <button class="card-button clean-button">Clean basket</button>
+        <button class="card-button clean-button" data-i18n="cart.cleanButton">Clean basket</button>
     `;
 
     const cleanButton = document.querySelector('.clean-button');
     loadCleanFunction(userId, cleanButton);
+
+    applyTranslations();
 }

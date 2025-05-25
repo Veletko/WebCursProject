@@ -212,6 +212,24 @@ export const translations = {
       "applyFilters": {
         "en": "Apply Filters",
         "ru": "Применить фильтры"
+      },
+      "edit": {
+        "en": "Edit",
+        "ru": "Редактировать"
+      },
+      "delete": {
+        "en": "Delete",
+        "ru": "Удалить"
+      }
+    },
+    "pagination": {
+      "previous": {
+        "en": "Previous Page",
+        "ru": "Предыдущая"
+      },
+      "next": {
+        "en": "Next Page",
+        "ru": "Следующая"
       }
     },
     "search": {
@@ -291,7 +309,7 @@ export const translations = {
       }
     }
   },
-   "homepage": {
+  "homepage": {
     "title": {
       "en": "Beautyness",
       "ru": "Beautyness"
@@ -629,145 +647,145 @@ export const translations = {
       }
     },
     "errors": {
-    "nicknameRequired": {
-      "en": "Nickname is required",
-      "ru": "Имя пользователя обязательно"
-    },
-    "noSpaces": {
-      "en": "Cannot contain spaces",
-      "ru": "Не должно содержать пробелов"
-    },
-    "nicknameLength": {
-      "en": "Must be 3-20 characters long",
-      "ru": "Должно быть 3-20 символов"
-    },
-    "nicknameExists": {
-      "en": "Nickname already exists",
-      "ru": "Имя пользователя уже занято"
-    },
-    "nicknameCheckError": {
-      "en": "Error checking nickname",
-      "ru": "Ошибка проверки имени пользователя"
-    },
-    "nameRequired": {
-      "en": "Name is required",
-      "ru": "Имя обязательно"
-    },
-    "noNumbers": {
-      "en": "Cannot contain numbers",
-      "ru": "Не должно содержать цифр"
-    },
-    "nameMinLength": {
-      "en": "Must be at least 2 characters long",
-      "ru": "Должно быть не менее 2 символов"
-    },
-    "surnameRequired": {
-      "en": "Surname is required",
-      "ru": "Фамилия обязательна"
-    },
-    "surnameMinLength": {
-      "en": "Must be at least 2 characters long",
-      "ru": "Должна быть не менее 2 символов"
-    },
-    "emailRequired": {
-      "en": "Email is required",
-      "ru": "Email обязателен"
-    },
-    "invalidEmail": {
-      "en": "Invalid email format",
-      "ru": "Неверный формат email"
-    },
-    "emailExists": {
-      "en": "Email already exists",
-      "ru": "Email уже зарегистрирован"
-    },
-    "emailCheckError": {
-      "en": "Error checking email",
-      "ru": "Ошибка проверки email"
-    },
-    "phoneRequired": {
-      "en": "Phone is required",
-      "ru": "Телефон обязателен"
-    },
-    "invalidPhone": {
-      "en": "Must be a Belarus number (e.g., +375291234567)",
-      "ru": "Должен быть белорусский номер (например, +375291234567)"
-    },
-    "dobRequired": {
-      "en": "Date of birth is required",
-      "ru": "Дата рождения обязательна"
-    },
-    "invalidDateFormat": {
-      "en": "Invalid date format (dd.mm.yyyy required)",
-      "ru": "Неверный формат даты (требуется дд.мм.гггг)"
-    },
-    "invalidDay": {
-      "en": "Invalid day (1-31)",
-      "ru": "Неверный день (1-31)"
-    },
-    "invalidMonth": {
-      "en": "Invalid month (1-12)",
-      "ru": "Неверный месяц (1-12)"
-    },
-    "invalidYear": {
-      "en": "Invalid year",
-      "ru": "Неверный год"
-    },
-    "invalidDate": {
-      "en": "Invalid date (not a real calendar date)",
-      "ru": "Неверная дата (не существует)"
-    },
-    "minAge": {
-      "en": "You must be at least 16 years old",
-      "ru": "Вам должно быть не менее 16 лет"
-    },
-    "futureDate": {
-      "en": "Date of birth cannot be in the future",
-      "ru": "Дата рождения не может быть в будущем"
-    },
-    "invalidDob": {
-      "en": "Please enter a valid date of birth",
-      "ru": "Введите корректную дату рождения"
-    },
-    "passwordRequired": {
-      "en": "Password is required",
-      "ru": "Пароль обязателен"
-    },
-    "passwordLength": {
-      "en": "Must be 8-20 characters long",
-      "ru": "Должен быть 8-20 символов"
-    },
-    "passwordUppercase": {
-      "en": "Must contain at least one uppercase letter",
-      "ru": "Должен содержать хотя бы одну заглавную букву"
-    },
-    "passwordLowercase": {
-      "en": "Must contain at least one lowercase letter",
-      "ru": "Должен содержать хотя бы одну строчную букву"
-    },
-    "passwordDigit": {
-      "en": "Must contain at least one digit",
-      "ru": "Должен содержать хотя бы одну цифру"
-    },
-    "passwordSpecialChar": {
-      "en": "Must contain at least one special character",
-      "ru": "Должен содержать хотя бы один специальный символ"
-    },
-    "passwordCommon": {
-      "en": "Password is too common",
-      "ru": "Пароль слишком простой"
-    },
-    "repeatPasswordRequired": {
-      "en": "Please repeat your password",
-      "ru": "Повторите пароль"
-    },
-    "passwordsMismatch": {
-      "en": "Passwords do not match",
-      "ru": "Пароли не совпадают"
-    },
-    "agreeRequired": {
-      "en": "You must agree to the terms",
-      "ru": "Вы должны согласиться с условиями"
+      "nicknameRequired": {
+        "en": "Nickname is required",
+        "ru": "Имя пользователя обязательно"
+      },
+      "noSpaces": {
+        "en": "Cannot contain spaces",
+        "ru": "Не должно содержать пробелов"
+      },
+      "nicknameLength": {
+        "en": "Must be 3-20 characters long",
+        "ru": "Должно быть 3-20 символов"
+      },
+      "nicknameExists": {
+        "en": "Nickname already exists",
+        "ru": "Имя пользователя уже занято"
+      },
+      "nicknameCheckError": {
+        "en": "Error checking nickname",
+        "ru": "Ошибка проверки имени пользователя"
+      },
+      "nameRequired": {
+        "en": "Name is required",
+        "ru": "Имя обязательно"
+      },
+      "noNumbers": {
+        "en": "Cannot contain numbers",
+        "ru": "Не должно содержать цифр"
+      },
+      "nameMinLength": {
+        "en": "Must be at least 2 characters long",
+        "ru": "Должно быть не менее 2 символов"
+      },
+      "surnameRequired": {
+        "en": "Surname is required",
+        "ru": "Фамилия обязательна"
+      },
+      "surnameMinLength": {
+        "en": "Must be at least 2 characters long",
+        "ru": "Должна быть не менее 2 символов"
+      },
+      "emailRequired": {
+        "en": "Email is required",
+        "ru": "Email обязателен"
+      },
+      "invalidEmail": {
+        "en": "Invalid email format",
+        "ru": "Неверный формат email"
+      },
+      "emailExists": {
+        "en": "Email already exists",
+        "ru": "Email уже зарегистрирован"
+      },
+      "emailCheckError": {
+        "en": "Error checking email",
+        "ru": "Ошибка проверки email"
+      },
+      "phoneRequired": {
+        "en": "Phone is required",
+        "ru": "Телефон обязателен"
+      },
+      "invalidPhone": {
+        "en": "Must be a Belarus number (e.g., +375291234567)",
+        "ru": "Должен быть белорусский номер (например, +375291234567)"
+      },
+      "dobRequired": {
+        "en": "Date of birth is required",
+        "ru": "Дата рождения обязательна"
+      },
+      "invalidDateFormat": {
+        "en": "Invalid date format (dd.mm.yyyy required)",
+        "ru": "Неверный формат даты (требуется дд.мм.гггг)"
+      },
+      "invalidDay": {
+        "en": "Invalid day (1-31)",
+        "ru": "Неверный день (1-31)"
+      },
+      "invalidMonth": {
+        "en": "Invalid month (1-12)",
+        "ru": "Неверный месяц (1-12)"
+      },
+      "invalidYear": {
+        "en": "Invalid year",
+        "ru": "Неверный год"
+      },
+      "invalidDate": {
+        "en": "Invalid date (not a real calendar date)",
+        "ru": "Неверная дата (не существует)"
+      },
+      "minAge": {
+        "en": "You must be at least 16 years old",
+        "ru": "Вам должно быть не менее 16 лет"
+      },
+      "futureDate": {
+        "en": "Date of birth cannot be in the future",
+        "ru": "Дата рождения не может быть в будущем"
+      },
+      "invalidDob": {
+        "en": "Please enter a valid date of birth",
+        "ru": "Введите корректную дату рождения"
+      },
+      "passwordRequired": {
+        "en": "Password is required",
+        "ru": "Пароль обязателен"
+      },
+      "passwordLength": {
+        "en": "Must be 8-20 characters long",
+        "ru": "Должен быть 8-20 символов"
+      },
+      "passwordUppercase": {
+        "en": "Must contain at least one uppercase letter",
+        "ru": "Должен содержать хотя бы одну заглавную букву"
+      },
+      "passwordLowercase": {
+        "en": "Must contain at least one lowercase letter",
+        "ru": "Должен содержать хотя бы одну строчную букву"
+      },
+      "passwordDigit": {
+        "en": "Must contain at least one digit",
+        "ru": "Должен содержать хотя бы одну цифру"
+      },
+      "passwordSpecialChar": {
+        "en": "Must contain at least one special character",
+        "ru": "Должен содержать хотя бы один специальный символ"
+      },
+      "passwordCommon": {
+        "en": "Password is too common",
+        "ru": "Пароль слишком простой"
+      },
+      "repeatPasswordRequired": {
+        "en": "Please repeat your password",
+        "ru": "Повторите пароль"
+      },
+      "passwordsMismatch": {
+        "en": "Passwords do not match",
+        "ru": "Пароли не совпадают"
+      },
+      "agreeRequired": {
+        "en": "You must agree to the terms",
+        "ru": "Вы должны согласиться с условиями"
       }
     }
   },
@@ -951,7 +969,7 @@ export const translations = {
       }
     }
   },
-   "service": {
+  "service": {
     "pageTitle": {
       "en": "Service Details",
       "ru": "Детали услуги"
@@ -964,6 +982,12 @@ export const translations = {
       "title": {
         "en": "Beauty Service",
         "ru": "Услуга салона красоты"
+      }
+    },
+    "time": {
+      "minutes": {
+        "en": "minutes",
+        "ru": "минут"
       }
     },
     "imageAlt": {
@@ -1003,14 +1027,70 @@ export const translations = {
       }
     },
     "pagination": {
-        "previous": {
-            "en": "Previous Page",
-            "ru": "Предыдущая"
-        },
-        "next": {
-            "en": "Next Page",
-            "ru": "Следующая"
-        }
+      "previous": {
+        "en": "Previous Page",
+        "ru": "Предыдущая"
+      },
+      "next": {
+        "en": "Next Page",
+        "ru": "Следующая"
+      }
+    }
+  },
+  "cart": {
+    "itemAlt": {
+        "en": "service image",
+        "ru": "изображение услуги"
+    },
+    "priceLabel": {
+        "en": "Price:",
+        "ru": "Цена:"
+    },
+    "durationLabel": {
+        "en": "Duration:",
+        "ru": "Длительность:"
+    },
+    "minutes": {
+        "en": "min",
+        "ru": "мин"
+    },
+    "buyButton": {
+        "en": "Buy now",
+        "ru": "Купить сейчас"
+    },
+    "deleteButton": {
+        "en": "Delete item",
+        "ru": "Удалить"
+    },
+    "totalPrice": {
+        "en": "Total price:",
+        "ru": "Общая стоимость:"
+    },
+    "cleanButton": {
+        "en": "Clean basket",
+        "ru": "Очистить корзину"
+    },
+    "emptyCart": {
+        "en": "Your cart is empty",
+        "ru": "Ваша корзина пуста"
+    },
+    "errorUser": {
+        "en": "Error: user not found",
+        "ru": "Ошибка: пользователь не найден"
+    },
+    "errorLoad": {
+        "en": "Error loading cart",
+        "ru": "Ошибка загрузки корзины"
+    },
+    "banner":{
+      "subtitle":{
+        "en": "THE CART",
+        "ru": "Верша"
+      },
+      "title":{
+        "en": "Basket",
+        "ru": "Корзина"
+      }
     }
   }
 };

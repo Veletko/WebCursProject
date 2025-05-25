@@ -1,5 +1,6 @@
 import { translations } from './translations.js';
-
+import { renderServicesPage,currentPage } from '../services/loadServices.js';
+import { renderAdminPage, currentAdminPage } from '../admin/loadServicesForAdmin.js';
 let currentLanguage = localStorage.getItem('language') || 'en';
 
 export function setLanguage(lang) {
@@ -64,6 +65,18 @@ export function initLanguageSwitchers(root = document) {
     if (e.target.closest('.language-toggle')) {
       const newLang = currentLanguage === 'en' ? 'ru' : 'en';
       setLanguage(newLang);
+      
+      const path = window.location.pathname;
+      
+      if (path.includes('/admin') && typeof renderAdminPage === 'function') {
+        renderAdminPage(currentAdminPage);
+      } 
+      else if (path.includes('/services') && typeof renderServicesPage === 'function') {
+        renderServicesPage(currentPage);
+      }
+      else if (path.includes('/cart')) {
+        window.location.reload();
+      }
     }
   });
 }

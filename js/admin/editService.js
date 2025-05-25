@@ -1,4 +1,4 @@
-import { allServices, renderAdminPage, currentPage } from "./loadServicesForAdmin.js";
+import { allServices, renderAdminPage, currentAdminPage } from "./loadServicesForAdmin.js";
 
 let currentEditingServiceId = null;
 const editModal = document.getElementById('edit-modal');
@@ -87,7 +87,7 @@ if (editForm) {
             await handleServiceUpdate(updatedData);
             alert('Service updated successfully!');
             closeEditModal();
-            renderAdminPage(currentPage); 
+            renderAdminPage(currentAdminPage); 
         } catch (error) {
             alert(`Error: ${error.message}`);
         }
