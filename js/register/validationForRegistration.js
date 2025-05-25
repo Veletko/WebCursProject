@@ -3,7 +3,7 @@ const commonPasswords = [
     "Abcd1234!", "Password1!", "Sunshine2024!", "Football123!", "Monkey123!"
 ];
 
-export function showError(fieldId, message) {
+export function showError(fieldId, messageKey) {
     const fieldElement = document.getElementById(fieldId);
     if (!fieldElement) {
         console.error(`Element with id "${fieldId}" not found`);
@@ -22,7 +22,7 @@ export function showError(fieldId, message) {
         return false;
     }
 
-    error.textContent = message;
+    error.setAttribute('data-i18n', `register.errors.${messageKey}`);
     error.classList.add('active');
     return false;
 }
@@ -36,6 +36,7 @@ export function clearError(fieldId) {
 
     const error = inputWrapper.querySelector('.error-message');
     if (error) {
+        error.removeAttribute('data-i18n');
         error.textContent = '';
         error.classList.remove('active');
     }
@@ -51,26 +52,26 @@ function hasNumbers(str) {
 
 export async function validateNickname(userData, API_URL) {
     if (!userData.nickname) {
-        return showError('nickname', 'Nickname is required');
+        return showError('nickname', 'nicknameRequired');
     }
 
     if (hasSpaces(userData.nickname)) {
-        return showError('nickname', 'Nickname cannot contain spaces');
+        return showError('nickname', 'noSpaces');
     }
 
     if (userData.nickname.length < 3 || userData.nickname.length > 20) {
-        return showError('nickname', 'Nickname must be 3-20 characters long');
+        return showError('nickname', 'nicknameLength');
     }
 
     try {
         const response = await fetch(`${API_URL}?nickname=${userData.nickname}`);
         const existingUsers = await response.json();
         if (existingUsers.length > 0) {
-            return showError('nickname', 'Nickname already exists');
+            return showError('nickname', 'nicknameExists');
         }
     } catch (error) {
         console.error('Error during nickname validation:', error);
-        return showError('nickname', 'Error checking nickname uniqueness');
+        return showError('nickname', 'nicknameCheckError');
     }
 
     clearError('nickname');
@@ -79,19 +80,19 @@ export async function validateNickname(userData, API_URL) {
 
 export function validateName(userData) {
     if (!userData.name) {
-        return showError('name', 'Name is required');
+        return showError('name', 'nameRequired');
     }
 
     if (hasSpaces(userData.name)) {
-        return showError('name', 'Name cannot contain spaces');
+        return showError('name', 'noSpaces');
     }
 
     if (hasNumbers(userData.name)) {
-        return showError('name', 'Name cannot contain numbers');
+        return showError('name', 'noNumbers');
     }
 
     if (userData.name.length < 2) {
-        return showError('name', 'Name must be at least 2 characters long');
+        return showError('name', 'nameMinLength');
     }
 
     clearError('name');
@@ -101,11 +102,11 @@ export function validateName(userData) {
 export function validateSecondName(userData) {
     if (userData.second_name) {
         if (hasSpaces(userData.second_name)) {
-            return showError('second_name', 'Second name cannot contain spaces');
+            return showError('second_name', 'noSpaces');
         }
 
         if (hasNumbers(userData.second_name)) {
-            return showError('second_name', 'Second name cannot contain numbers');
+            return showError('second_name', 'noNumbers');
         }
     }
 
@@ -115,19 +116,19 @@ export function validateSecondName(userData) {
 
 export function validateSurname(userData) {
     if (!userData.surname) {
-        return showError('surname', 'Surname is required');
+        return showError('surname', 'surnameRequired');
     }
 
     if (hasSpaces(userData.surname)) {
-        return showError('surname', 'Surname cannot contain spaces');
+        return showError('surname', 'noSpaces');
     }
 
     if (hasNumbers(userData.surname)) {
-        return showError('surname', 'Surname cannot contain numbers');
+        return showError('surname', 'noNumbers');
     }
 
     if (userData.surname.length < 2) {
-        return showError('surname', 'Surname must be at least 2 characters long');
+        return showError('surname', 'surnameMinLength');
     }
 
     clearError('surname');
@@ -136,16 +137,16 @@ export function validateSurname(userData) {
 
 export async function validateEmail(userData, API_URL, checkUniqueness = false) {
     if (!userData.email) {
-        return showError('email', 'Email is required');
+        return showError('email', 'emailRequired');
     }
 
     if (hasSpaces(userData.email)) {
-        return showError('email', 'Email cannot contain spaces');
+        return showError('email', 'noSpaces');
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(userData.email)) {
-        return showError('email', 'Invalid email format');
+        return showError('email', 'invalidEmail');
     }
 
     if (checkUniqueness) {
@@ -153,11 +154,11 @@ export async function validateEmail(userData, API_URL, checkUniqueness = false) 
             const response = await fetch(`${API_URL}?email=${userData.email}`);
             const existingUsers = await response.json();
             if (existingUsers.length > 0) {
-                return showError('email', 'Email already exists');
+                return showError('email', 'emailExists');
             }
         } catch (error) {
             console.error('Error during email validation:', error);
-            return showError('email', 'Error checking email uniqueness');
+            return showError('email', 'emailCheckError');
         }
     }
 
@@ -167,16 +168,16 @@ export async function validateEmail(userData, API_URL, checkUniqueness = false) 
 
 export function validatePhone(userData) {
     if (!userData.phone) {
-        return showError('phone', 'Phone is required');
+        return showError('phone', 'phoneRequired');
     }
 
     if (hasSpaces(userData.phone)) {
-        return showError('phone', 'Phone cannot contain spaces');
+        return showError('phone', 'noSpaces');
     }
 
     const phoneRegex = /^\+375\d{9}$/;
     if (!phoneRegex.test(userData.phone)) {
-        return showError('phone', 'Phone must be a Belarus number (e.g., +375291234567)');
+        return showError('phone', 'invalidPhone');
     }
 
     clearError('phone');
@@ -185,12 +186,12 @@ export function validatePhone(userData) {
 
 export function validateDateOfBirth(userData) {
     if (!userData.date_of_birth) {
-        return showError('date_of_birth', 'Date of birth is required');
+        return showError('date_of_birth', 'dobRequired');
     }
 
     const dateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
     if (!dateRegex.test(userData.date_of_birth)) {
-        return showError('date_of_birth', 'Invalid date format (дд.мм.гггг required)');
+        return showError('date_of_birth', 'invalidDateFormat');
     }
 
     const parts = userData.date_of_birth.split('.');
@@ -199,18 +200,18 @@ export function validateDateOfBirth(userData) {
     const year = parseInt(parts[2], 10);
 
     if (day < 1 || day > 31) {
-        return showError('date_of_birth', 'Invalid day (1-31)');
+        return showError('date_of_birth', 'invalidDay');
     }
     if (month < 1 || month > 12) {
-        return showError('date_of_birth', 'Invalid month (1-12)');
+        return showError('date_of_birth', 'invalidMonth');
     }
     if (year < 1900 || year > new Date().getFullYear()) {
-        return showError('date_of_birth', 'Invalid year');
+        return showError('date_of_birth', 'invalidYear');
     }
 
     const dob = new Date(year, month - 1, day);
     if (dob.getFullYear() !== year || dob.getMonth() + 1 !== month || dob.getDate() !== day) {
-        return showError('date_of_birth', 'Invalid date (not a real calendar date)');
+        return showError('date_of_birth', 'invalidDate');
     }
 
     const today = new Date();
@@ -222,15 +223,15 @@ export function validateDateOfBirth(userData) {
     }
 
     if (age < 16) {
-        return showError('date_of_birth', 'You must be at least 16 years old');
+        return showError('date_of_birth', 'minAge');
     }
 
     if (dob > today) {
-        return showError('date_of_birth', 'Date of birth cannot be in the future');
+        return showError('date_of_birth', 'futureDate');
     }
 
     if (age > 120) {
-        return showError('date_of_birth', 'Please enter a valid date of birth');
+        return showError('date_of_birth', 'invalidDob');
     }
 
     clearError('date_of_birth');
@@ -239,15 +240,15 @@ export function validateDateOfBirth(userData) {
 
 export function validatePassword(userData) {
     if (!userData.password) {
-        return showError('password', 'Password is required');
+        return showError('password', 'passwordRequired');
     }
 
     if (hasSpaces(userData.password)) {
-        return showError('password', 'Password cannot contain spaces');
+        return showError('password', 'noSpaces');
     }
 
     if (userData.password.length < 8 || userData.password.length > 20) {
-        return showError('password', 'Password must be 8-20 characters long');
+        return showError('password', 'passwordLength');
     }
 
     const upperCaseRegex = /[A-Z]/;
@@ -256,20 +257,20 @@ export function validatePassword(userData) {
     const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
 
     if (!upperCaseRegex.test(userData.password)) {
-        return showError('password', 'Password must contain at least one uppercase letter');
+        return showError('password', 'passwordUppercase');
     }
     if (!lowerCaseRegex.test(userData.password)) {
-        return showError('password', 'Password must contain at least one lowercase letter');
+        return showError('password', 'passwordLowercase');
     }
     if (!digitRegex.test(userData.password)) {
-        return showError('password', 'Password must contain at least one digit');
+        return showError('password', 'passwordDigit');
     }
     if (!specialCharRegex.test(userData.password)) {
-        return showError('password', 'Password must contain at least one special character');
+        return showError('password', 'passwordSpecialChar');
     }
 
     if (commonPasswords.includes(userData.password)) {
-        return showError('password', 'Password is too common');
+        return showError('password', 'passwordCommon');
     }
 
     clearError('password');
@@ -278,11 +279,11 @@ export function validatePassword(userData) {
 
 export function validatePasswordRepeat(userData) {
     if (!userData.password_repeat) {
-        return showError('password_repeat', 'Please repeat your password');
+        return showError('password_repeat', 'repeatPasswordRequired');
     }
 
     if (userData.password !== userData.password_repeat) {
-        return showError('password_repeat', 'Passwords do not match');
+        return showError('password_repeat', 'passwordsMismatch');
     }
 
     clearError('password_repeat');
@@ -303,11 +304,12 @@ export function validateAgree() {
     }
 
     if (!agreeCheckbox.checked) {
-        error.textContent = 'You must agree to the terms';
+        error.setAttribute('data-i18n', 'register.errors.agreeRequired');
         error.classList.add('active');
         return false;
     }
 
+    error.removeAttribute('data-i18n');
     error.textContent = '';
     error.classList.remove('active');
     return true;
@@ -317,6 +319,7 @@ export async function Validation(userData, API_URL) {
     let hasError = false;
 
     document.querySelectorAll('.error-message, .agree-error').forEach(error => {
+        error.removeAttribute('data-i18n');
         error.textContent = '';
         error.classList.remove('active');
     });

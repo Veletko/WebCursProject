@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title data-i18n="admin.pageTitle">Admin Page</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/admin.css">
-    <script src="/js/baseElements/baseElements.js" type="module" ></script>
+    <script src="/js/baseElements/baseElements.js" type="module"></script>
     <script src="/js/admin/admin.js" type="module"></script>
 </head>
 <body>
@@ -19,118 +19,118 @@
     <main>
         <section class="banner-container">
             <div class="banner-container-text">
-                <h3>OUR SERVICES</h3>
-                <h1>Admin Page</h1>
+                <h3 data-i18n="admin.banner.subtitle">OUR SERVICES</h3>
+                <h1 data-i18n="admin.pageTitle">Admin Page</h1>
             </div>
         </section>
         <section class="services-container">
             <div class="filter-section">
                 <div class="filter-options">
-                    <button class="card-button"> Add</button>
+                    <button class="card-button" data-i18n="admin.buttons.add">Add</button>
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="SEARCH...">
+                    <input type="text" data-i18n="[placeholder]admin.search.placeholder" placeholder="SEARCH...">
                 </div>
             </div>
             <div class="cards-container">
-                <div class="card-grid"></div></div>
-            <div class="pagination">
-                
+                <div class="card-grid"></div>
             </div>
+            <div class="pagination"></div>
             <div class="modal" id="filter-modal">
                 <div class="modal-content">
                     <span class="close-modal" id="close-modal">&times;</span>
-                    <h2>Filter by Category</h2>
+                    <h2 data-i18n="admin.modals.filter.title">Filter by Category</h2>
                     <div class="filter-categories">
                         <div class="category-group">
-                            <h3>Category</h3>
+                            <h3 data-i18n="admin.modals.filter.category">Category</h3>
                             <div class="categories-container"></div>
                         </div>
                         <div class="category-group">
-                            <h3>Price</h3>
-                            <label>From:</label>
+                            <h3 data-i18n="admin.modals.filter.price">Price</h3>
+                            <label data-i18n="admin.modals.filter.from">From:</label>
                             <input type="number" id="price-from" min="0" class="filter-input">
-                            <label>To:</label>
+                            <label data-i18n="admin.modals.filter.to">To:</label>
                             <input type="number" id="price-to" min="0" class="filter-input">
                         </div>
                         <div class="category-group">
-                            <h3>Duration</h3>
-                            <label>From (min):</label>
+                            <h3 data-i18n="admin.modals.filter.duration">Duration</h3>
+                            <label data-i18n="admin.modals.filter.from">From:</label>
                             <input type="number" id="duration-from" min="0" class="filter-input">
-                            <label>To (min):</label>
+                            <label data-i18n="admin.modals.filter.to">To:</label>
                             <input type="number" id="duration-to" min="0" class="filter-input">
+                            <span data-i18n="admin.modals.filter.minutes">(min)</span>
                         </div>
                     </div>
-                    <button class="card-button" id="apply-filters">Apply Filters</button>
+                    <button class="card-button" id="apply-filters" data-i18n="admin.buttons.applyFilters">Apply Filters</button>
+                </div>
+            </div>
+            <div class="modal" id="edit-modal">
+                <div class="modal-content">
+                    <span class="close-modal" id="close-edit-modal">&times;</span>
+                    <h2 data-i18n="admin.modals.edit.title">Edit Service</h2>
+                    <form id="edit-service-form">
+                        <div class="input-group">
+                            <label for="edit-title" data-i18n="admin.modals.edit.labels.title">Title (EN)</label>
+                            <input type="text" id="edit-title" class="card-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-description" data-i18n="admin.modals.edit.labels.description">Description (EN)</label>
+                            <textarea id="edit-description" class="card-input" required></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-price" data-i18n="admin.modals.edit.labels.price">Price ($)</label>
+                            <input type="number" id="edit-price" class="card-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-duration" data-i18n="admin.modals.edit.labels.duration">Duration (min)</label>
+                            <input type="number" id="edit-duration" class="card-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-category" data-i18n="admin.modals.edit.labels.category">Category</label>
+                            <input type="text" id="edit-category" class="card-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-image" data-i18n="admin.modals.edit.labels.image">Image URL</label>
+                            <input type="text" id="edit-image" class="card-input" required>
+                        </div>
+                        <button type="submit" class="card-button" data-i18n="admin.buttons.save">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal" id="add-modal">
+                <div class="modal-content">
+                    <span class="close-modal" id="close-add-modal">&times;</span>
+                    <h2 data-i18n="admin.modals.add.title">Add New Service</h2>
+                    <form id="add-service-form">
+                        <div class="input-group">
+                            <label for="add-title" data-i18n="admin.modals.edit.labels.title">Title (EN)</label>
+                            <input type="text" id="add-title" class="card-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="add-description" data-i18n="admin.modals.edit.labels.description">Description (EN)</label>
+                            <textarea id="add-description" class="card-input"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="add-price" data-i18n="admin.modals.edit.labels.price">Price ($)</label>
+                            <input type="number" id="add-price" class="card-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="add-duration" data-i18n="admin.modals.edit.labels.duration">Duration (min)</label>
+                            <input type="number" id="add-duration" class="card-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="add-category" data-i18n="admin.modals.edit.labels.category">Category</label>
+                            <input type="text" id="add-category" class="card-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="add-image" data-i18n="admin.modals.edit.labels.image">Image URL</label>
+                            <input type="text" id="add-image" class="card-input">
+                        </div>
+                        <button type="submit" class="card-button" data-i18n="admin.buttons.create">Create</button>
+                    </form>
                 </div>
             </div>
         </section>
-        <div class="modal" id="edit-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-edit-modal">&times;</span>
-            <h2>Edit Service</h2>
-            <form id="edit-service-form">
-                <div class="input-group">
-                    <label for="edit-title">Title (EN)</label>
-                    <input type="text" id="edit-title" class="card-input" required>
-                </div>
-                <div class="input-group">
-                    <label for="edit-description">Description (EN)</label>
-                    <textarea id="edit-description" class="card-input" required></textarea>
-                </div>
-                <div class="input-group">
-                    <label for="edit-price">Price ($)</label>
-                    <input type="number" id="edit-price" class="card-input" required>
-                </div>
-                <div class="input-group">
-                    <label for="edit-duration">Duration (min)</label>
-                    <input type="number" id="edit-duration" class="card-input" required>
-                </div>
-                <div class="input-group">
-                    <label for="edit-category">Category</label>
-                    <input type="text" id="edit-category" class="card-input" required>
-                </div>
-                <div class="input-group">
-                    <label for="edit-image">Image URL</label>
-                    <input type="text" id="edit-image" class="card-input" required>
-                </div>
-                <button type="submit" class="card-button">Save Changes</button>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="add-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-add-modal">x</span>
-            <h2>Add New Service</h2>
-            <form id="add-service-form">
-                <div class="input-group">
-                    <label for="add-title">Title (EN)</label>
-                    <input type="text" id="add-title" class="card-input" >
-                </div>
-                <div class="input-group">
-                    <label for="add-description">Description (EN)</label>
-                    <textarea id="add-description" class="card-input" ></textarea>
-                </div>
-                <div class="input-group">
-                    <label for="add-price">Price ($)</label>
-                    <input type="number" id="add-price" class="card-input" >
-                </div>
-                <div class="input-group">
-                    <label for="add-duration">Duration (min)</label>
-                    <input type="number" id="add-duration" class="card-input">
-                </div>
-                <div class="input-group">
-                    <label for="add-category">Category</label>
-                    <input type="text" id="add-category" class="card-input" >
-                </div>
-                <div class="input-group">
-                    <label for="add-image">Image URL</label>
-                    <input type="text" id="add-image" class="card-input" >
-                </div>
-                <button type="submit" class="card-button">Create</button>
-            </form>
-        </div>
-    </div>
     </main>
     <footer id="footer-placeholder"></footer>
 </body>

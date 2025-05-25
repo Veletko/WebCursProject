@@ -1,3 +1,5 @@
+import { getCurrentLanguage } from './languageService.js';
+
 export function initFooter(placeholderId = 'footer-placeholder') {
     const placeholder = document.getElementById(placeholderId);
     if (!placeholder) {
@@ -27,62 +29,62 @@ export function initFooter(placeholderId = 'footer-placeholder') {
             <hr class="footer-line">
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>Explore</h4>
+                    <h4 data-i18n="footer.explore.title">Explore</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Appointments</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.home">Home</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.about">About Us</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.services">Services</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.appointments">Appointments</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.blog">Blog</a></li>
+                        <li><a href="#" data-i18n="footer.explore.links.contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Utility Pages</h4>
+                    <h4 data-i18n="footer.utility.title">Utility Pages</h4>
                     <ul>
-                        <li><a href="#">Start here</a></li>
-                        <li><a href="#">Style guide</a></li>
-                        <li><a href="#">404 not found</a></li>
-                        <li><a href="#">Password protected</a></li>
-                        <li><a href="#">Licenses</a></li>
-                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.start">Start here</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.style">Style guide</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.notFound">404 not found</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.password">Password protected</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.licenses">Licenses</a></li>
+                        <li><a href="#" data-i18n="footer.utility.links.changelog">Changelog</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Keep in Touch</h4>
+                    <h4 data-i18n="footer.contact.title">Keep in Touch</h4>
                     <ul>
                         <li>
                             <div class="footer-column-text">
-                                <span>Address:</span>
-                                <span>24A Kingston St, Los Vegas NC 28202, USA.</span>
+                                <span data-i18n="footer.contact.address">Address:</span>
+                                <span data-i18n="footer.contact.addressText">24A Kingston St, Los Vegas NC 28202, USA.</span>
                             </div>
                         </li>
                         <li>
                             <div class="footer-column-text">
-                                <span>Mail:</span>
-                                <span>support@doctors.com</span>
+                                <span data-i18n="footer.contact.mail">Mail:</span>
+                                <span data-i18n="footer.contact.mailText">support@doctors.com</span>
                             </div>
                         </li>
                         <li>
                             <div class="footer-column-text">
-                                <span>Phone:</span>
-                                <span>(+22) 123 - 4567 - 900</span>
+                                <span data-i18n="footer.contact.phone">Phone:</span>
+                                <span data-i18n="footer.contact.phoneText">(+22) 123 - 4567 - 900</span>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Working Hours</h4>
+                    <h4 data-i18n="footer.hours.title">Working Hours</h4>
                     <ul>
-                        <li><span>Mon to Fri: 7am - 6pm</span></li>
-                        <li><span>Sat: 9am - 7pm</span></li>
-                        <li><span>Sun: 9am - 6pm</span></li>
+                        <li><span data-i18n="footer.hours.weekdays">Mon to Fri: 7am - 6pm</span></li>
+                        <li><span data-i18n="footer.hours.saturday">Sat: 9am - 7pm</span></li>
+                        <li><span data-i18n="footer.hours.sunday">Sun: 9am - 6pm</span></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-button-container">
-            <p>Copyright 2021. Drafted by Victor Themes.</p>
+            <p data-i18n="footer.copyright">Copyright 2021. Drafted by Victor Themes.</p>
         </div>
     `;
 

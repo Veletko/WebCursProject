@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error</title>
+    <title data-i18n="404.pageTitle">404 Error</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="..\css\header-foter.css">
+    <link rel="stylesheet" href="../css\header-foter.css">
     <link rel="stylesheet" href="../css/404.css">
     <script src="/js/baseElements/baseElements.js" type="module"></script>
 </head>
@@ -18,20 +18,23 @@
     <main>
         <section class="banner-container">
             <div class="banner-container-text">
-                <h3>page not found</h3>
-                <h1>404 Error Page</h1>
+                <h3 data-i18n="404.banner.subtitle">page not found</h3>
+                <h1 data-i18n="404.banner.title">404 Error Page</h1>
             </div>
         </section>
         <section class="section-404">
-            <h2>404</h2>
+            <h2 data-i18n="404.mainSection.errorCode">404</h2>
             <div class="text-404">
-                <h3>Page not Found!!!</h3>
-                <p>The page you are looking for doesn't exist.
-                Please try searching for some other page,
-                or return to the website's homepage to
-                find what you're looking for.</p>
+                <h3 data-i18n="404.mainSection.title">Page not Found!!!</h3>
+                <p data-i18n="404.mainSection.description">
+                    The page you are looking for doesn't exist.
+                    Please try searching for some other page,
+                    or return to the website's homepage to
+                    find what you're looking for.
+                </p>
             </div>
-            <button class="banner-button" onclick="location.href='./homepage.html'">Back to home</button>
+            <button class="banner-button" data-i18n="404.mainSection.button" 
+                    onclick="location.href='./homepage.html'">Back to home</button>
         </section>
     </main>
     <footer id="footer-placeholder"></footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title data-i18n="register.pageTitle">Document</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/registar.css">
@@ -19,108 +19,136 @@
     <div id="mobile-menu-placeholder"></div>
     <main>
         <section class="register-container">
-    <div>
-        <h3>Enter into Beauty</h3>
-        <h2>Check in</h2>
-    </div>
-    <div class="register-container-window">
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/user-register.svg" alt="user icon">
-                <input class="card-input" type="text" placeholder="Nickname" id="nickname">
-                <button class="generate-button generate-nickname">Generate Nickname</button>
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/user-register.svg" alt="user icon">
-                <input class="card-input" type="text" placeholder="Name" id="name">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/user-register.svg" alt="user icon">
-                <input class="card-input" type="text" placeholder="Second Name" id="second_name">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/user-register.svg" alt="user icon">
-                <input class="card-input" type="text" placeholder="Surname" id="surname">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/mail-register.svg" alt="email icon">
-                <input class="card-input" type="email" placeholder="Email" id="email">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/phone-register.svg" alt="phone icon">
-                <input class="card-input" type="tel" placeholder="Phone" id="phone">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/book-register.svg" alt="calendar icon">
-                <input class="card-input" type="text" placeholder="Date of birth" id="date_of_birth">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/book-register.svg" alt="lock icon">
-                <input class="card-input" type="password" placeholder="Password" id="password">
-                <button class="generate-button generate-password">Generate Password</button>
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <div class="input-wrapper">
-            <div class="password-wrapper">
-                <img class="icon" src="/img/book-register.svg" alt="lock icon">
-                <input class="card-input" type="password" placeholder="Repeat Password" id="password_repeat" onpaste="return false;">
-            </div>
-            <span class="error-message"></span>
-        </div>
-        <button class="check-in-button" id="submit-button">Check in</button>
-        <label class="agree-label">
             <div>
-                <input type="checkbox" name="agree" id="agree">
-                 I agree to <a href="#" id="terms-link">terms of use</a>
+                <h3 data-i18n="register.form.welcome">Enter into Beauty</h3>
+                <h2 data-i18n="register.form.title">Check in</h2>
             </div>
-            <span class="error-message agree-error"></span>
-        </label>
-        <h3><a href="login.html" id="toggle-form">Login in</a></h3>
-    </div>
-</section>
+            <div class="register-container-window">
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/user-register.svg" alt="user icon">
+                        <input class="card-input" type="text" 
+                               data-i18n="[placeholder]register.form.nickname" 
+                               placeholder="Nickname" 
+                               id="nickname">
+                        <button class="generate-button generate-nickname" data-i18n="register.form.generateNickname">Generate Nickname</button>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/user-register.svg" alt="user icon">
+                        <input class="card-input" type="text" 
+                               data-i18n="[placeholder]register.form.name" 
+                               placeholder="Name" 
+                               id="name">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/user-register.svg" alt="user icon">
+                        <input class="card-input" type="text" 
+                               data-i18n="[placeholder]register.form.secondName" 
+                               placeholder="Second Name" 
+                               id="second_name">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/user-register.svg" alt="user icon">
+                        <input class="card-input" type="text" 
+                               data-i18n="[placeholder]register.form.surname" 
+                               placeholder="Surname" 
+                               id="surname">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/mail-register.svg" alt="email icon">
+                        <input class="card-input" type="email" 
+                               data-i18n="[placeholder]register.form.email" 
+                               placeholder="Email" 
+                               id="email">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/phone-register.svg" alt="phone icon">
+                        <input class="card-input" type="tel" 
+                               data-i18n="[placeholder]register.form.phone" 
+                               placeholder="Phone" 
+                               id="phone">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/book-register.svg" alt="calendar icon">
+                        <input class="card-input" type="text" 
+                               data-i18n="[placeholder]register.form.birthDate" 
+                               placeholder="Date of birth" 
+                               id="date_of_birth">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/book-register.svg" alt="lock icon">
+                        <input class="card-input" type="password" 
+                               data-i18n="[placeholder]register.form.password" 
+                               placeholder="Password" 
+                               id="password">
+                        <button class="generate-button generate-password" data-i18n="register.form.generatePassword">Generate Password</button>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-wrapper">
+                    <div class="password-wrapper">
+                        <img class="icon" src="/img/book-register.svg" alt="lock icon">
+                        <input class="card-input" type="password" 
+                               data-i18n="[placeholder]register.form.repeatPassword" 
+                               placeholder="Repeat Password" 
+                               id="password_repeat" 
+                               onpaste="return false;">
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                <button class="check-in-button" id="submit-button" data-i18n="register.form.submit">Check in</button>
+                <label class="agree-label">
+                    <div>
+                        <input type="checkbox" name="agree" id="agree">
+                        <span data-i18n="register.form.agreeText">I agree to</span> <a href="#" id="terms-link" data-i18n="register.form.termsLink">terms of use</a>
+                    </div>
+                    <span class="error-message agree-error"></span>
+                </label>
+                <h3><a href="login.html" id="toggle-form" data-i18n="register.form.switchToLogin">Login in</a></h3>
+            </div>
+        </section>
 
-<div class="modal" id="terms-modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h2>Terms of Use</h2>
-        <div class="modal-body">
-            <p>Welcome to our website. By using our services, you agree to the following terms and conditions:</p>
-            <ul>
-                <li>You must be at least 16 years old to register.</li>
-                <li>All personal information provided must be accurate and up-to-date.</li>
-                <li>You are responsible for maintaining the confidentiality of your account and password.</li>
-                <li>We reserve the right to suspend or terminate accounts that violate these terms.</li>
-                <li>Our services are provided "as is" without warranties of any kind.</li>
-                <li>We may collect and use your personal data in accordance with our Privacy Policy.</li>
-                <li>You agree not to use our services for any unlawful or prohibited activities.</li>
-            </ul>
-            <p>If you have any questions, please contact us at support@doctors.com.</p>
+        <div class="modal" id="terms-modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 data-i18n="register.terms.title">Terms of Use</h2>
+                <div class="modal-body">
+                    <p data-i18n="register.terms.intro">Welcome to our website. By using our services, you agree to the following terms and conditions:</p>
+                    <ul>
+                        <li data-i18n="register.terms.item1">You must be at least 16 years old to register.</li>
+                        <li data-i18n="register.terms.item2">All personal information provided must be accurate and up-to-date.</li>
+                        <li data-i18n="register.terms.item3">You are responsible for maintaining the confidentiality of your account and password.</li>
+                        <li data-i18n="register.terms.item4">We reserve the right to suspend or terminate accounts that violate these terms.</li>
+                        <li data-i18n="register.terms.item5">Our services are provided "as is" without warranties of any kind.</li>
+                        <li data-i18n="register.terms.item6">We may collect and use your personal data in accordance with our Privacy Policy.</li>
+                        <li data-i18n="register.terms.item7">You agree not to use our services for any unlawful or prohibited activities.</li>
+                    </ul>
+                    <p data-i18n="register.terms.contact">If you have any questions, please contact us at support@doctors.com.</p>
+                </div>
+                <button class="modal-close-button" data-i18n="register.terms.closeButton">Close</button>
+            </div>
         </div>
-        <button class="modal-close-button">Close</button>
-    </div>
-</div>
     </main>
     <footer id="footer-placeholder"></footer>
 </body>

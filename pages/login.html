@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title data-i18n="login.pageTitle">Document</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/login.css">
@@ -19,28 +19,34 @@
     <main>
         <section class="banner-container">
             <div class="banner-container-text">
-                <h3>PASSWORD PROTECTED</h3>
-                <h1>Log in Page</h1>
+                <h3 data-i18n="login.banner.subtitle">PASSWORD PROTECTED</h3>
+                <h1 data-i18n="login.banner.title">Log in Page</h1>
             </div>
         </section>
         <section class="auth-section">
             <div>
-                <h3>Enter into Beauty</h3>
-                <h2>Log in</h2>
+                <h3 data-i18n="login.form.welcome">Enter into Beauty</h3>
+                <h2 data-i18n="login.form.title">Log in</h2>
             </div>
             <div class="auth-form">
                 <div class="input-wrapper">
                     <img class="icon" src="/img/user-register.svg" alt="user icon">
-                    <input class="card-input" type="text" placeholder="Nickname" id="nickname">
+                    <input class="card-input" type="text" 
+                           data-i18n="[placeholder]login.form.nickname" 
+                           placeholder="Nickname" 
+                           id="nickname">
                     <span class="error-message"></span>
                 </div>
                 <div class="input-wrapper">
                     <img class="icon" src="/img/book-register.svg" alt="lock icon">
-                    <input class="card-input" type="password" placeholder="Password" id="password">
+                    <input class="card-input" type="password" 
+                           data-i18n="[placeholder]login.form.password" 
+                           placeholder="Password" 
+                           id="password">
                     <span class="error-message"></span>
                 </div>
-                <button class="check-in-button" id="submit-button">Log in</button>
-                <h3><a href="registar.html" id="toggle-form">Check in</a></h3>
+                <button class="check-in-button" id="submit-button" data-i18n="login.form.submit">Log in</button>
+                <h3><a href="registar.html" id="toggle-form" data-i18n="login.form.switchToRegister">Check in</a></h3>
             </div>
         </section>
     </main>

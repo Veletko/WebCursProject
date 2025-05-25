@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Account</title>
+    <title data-i18n="account.pageTitle">Personal Account</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/personalAccount.css">
@@ -19,71 +19,71 @@
     <main>
         <section class="account-container">
             <div class="account-header">
-                <h3>Your beauty profile</h3>
-                <h1>Personal account</h1>
+                <h3 data-i18n="account.header.subtitle">Your beauty profile</h3>
+                <h1 data-i18n="account.header.title">Personal account</h1>
             </div>
 
             <div class="account-content">
                 <div class="account-avatar">
-                    <img src="/img/beauty-experts.png" alt="avatar" id="user-avatar">
+                    <img src="/img/beauty-experts.png" alt="avatar" id="user-avatar" data-i18n="[alt]account.avatarAlt">
                 </div>
 
                 <div class="account-details">
                     <div class="account-section">
-                        <h3>Personal Information</h3>
+                        <h3 data-i18n="account.sections.personalInfo">Personal Information</h3>
                         <div class="input-wrapper">
-                            <label for="nickname">Nickname:</label>
+                            <label for="nickname" data-i18n="account.fields.nickname">Nickname:</label>
                             <input type="text" id="nickname" class="card-input">
                             <span class="error-message" id="nickname-error"></span>
                         </div>
                         <div class="input-wrapper">
-                            <label for="name">Name:</label>
+                            <label for="name" data-i18n="account.fields.name">Name:</label>
                             <input type="text" id="name" class="card-input">
                             <span class="error-message" id="name-error"></span>
                         </div>
                         <div class="input-wrapper">
-                            <label for="second_name">Second Name:</label>
+                            <label for="second_name" data-i18n="account.fields.secondName">Second Name:</label>
                             <input type="text" id="second_name" class="card-input">
                             <span class="error-message" id="second_name-error"></span>
                         </div>
                         <div class="input-wrapper">
-                            <label for="surname">Surname:</label>
+                            <label for="surname" data-i18n="account.fields.surname">Surname:</label>
                             <input type="text" id="surname" class="card-input">
                             <span class="error-message" id="surname-error"></span>
                         </div>
                         <div class="input-wrapper">
-                            <label for="date_of_birth">Date of Birth:</label>
-                            <input type="text" id="date_of_birth" class="card-input" placeholder="дд.мм.гггг">
+                            <label for="date_of_birth" data-i18n="account.fields.birthDate">Date of Birth:</label>
+                            <input type="text" id="date_of_birth" class="card-input" placeholder="дд.мм.гггг" data-i18n="[placeholder]account.placeholders.birthDate">
                             <span class="error-message" id="date_of_birth-error"></span>
                         </div>
                     </div>
 
                     <div class="account-section">
-                        <h3>Contact Information</h3>
+                        <h3 data-i18n="account.sections.contactInfo">Contact Information</h3>
                         <div class="input-wrapper">
-                            <label for="email">Email:</label>
+                            <label for="email" data-i18n="account.fields.email">Email:</label>
                             <input type="email" id="email" class="card-input">
                             <span class="error-message" id="email-error"></span>
                         </div>
                         <div class="input-wrapper">
-                            <label for="phone">Phone:</label>
-                            <input type="text" id="phone" class="card-input" placeholder="+375xxxxxxxxx">
+                            <label for="phone" data-i18n="account.fields.phone">Phone:</label>
+                            <input type="text" id="phone" class="card-input" placeholder="+375xxxxxxxxx" data-i18n="[placeholder]account.placeholders.phone">
                             <span class="error-message" id="phone-error"></span>
                         </div>
                     </div>
 
                     <div class="account-section">
-                        <h3>Security</h3>
+                        <h3 data-i18n="account.sections.security">Security</h3>
                         <div class="input-wrapper">
-                            <button class="change-password-btn" id="change-password-btn">
+                            <button class="change-password-btn" id="change-password-btn" data-i18n="account.buttons.changePassword">
                                 Change Password
                             </button>
                         </div>
                     </div>
 
                     <div class="account-actions">
-                        <button class="save-btn card-button" id="save-changes" disabled>Save Changes</button>
-                        <button class="logout-btn" id="logout-button">Log Out</button>
+                        <button class="save-btn card-button" id="save-changes" disabled data-i18n="account.buttons.saveChanges">Save Changes</button>
+                        <button class="logout-btn" id="logout-button" data-i18n="account.buttons.logout">Log Out</button>
                     </div>
                 </div>
             </div>

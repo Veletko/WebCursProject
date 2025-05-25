@@ -172,27 +172,28 @@ header {
 }
 
 .language-option.ru {
-    background: var(--accent);
-    color: #fff;
+    background: var(--white);
+    color: var(--black);
     font-weight: bold;
     font-family: 'Manrope';
 }
 
 .language-option.en {
-    background: var(--white);
-    color: var(--black);
+    background: var(--accent);
+    color: #fff;
     font-weight: bold;
     font-family: 'Manrope';
 }
 
 .language-checkbox:checked ~ .language-toggle .ru {
-    background: var(--white);
-    color: var(--black);
+    background: var(--accent);
+    color: #fff;
 }
   
 .language-checkbox:checked ~ .language-toggle .en {
-    background: var(--accent);
-    color: #fff;
+    background: var(--white);
+    color: var(--black);
+
 }
 /*#endregion*/
 
