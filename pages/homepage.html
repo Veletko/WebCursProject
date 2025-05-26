@@ -18,6 +18,37 @@
     </div>
     <header id="header-placeholder"></header>
     <div id="mobile-menu-placeholder"></div>
+    <div id="accessibility-modal" class="accessibility-modal">
+    <div class="accessibility-modal-content">
+        <h2 data-i18n="accessibility.title">Версия для слабовидящих</h2>
+        
+        <div class="accessibility-option">
+            <h3 data-i18n="accessibility.fontSize">Размер текста</h3>
+            <div class="font-size-buttons">
+                <button data-font-size="small" data-i18n="accessibility.small">Маленький</button>
+                <button data-font-size="medium" class="active" data-i18n="accessibility.medium">Средний</button>
+                <button data-font-size="large" data-i18n="accessibility.large">Большой</button>
+            </div>
+        </div>
+        
+        <div class="accessibility-option">
+            <h3 data-i18n="accessibility.colorScheme">Цветовая схема</h3>
+            <div class="color-scheme-buttons">
+                <button data-scheme="dark-white" data-i18n="accessibility.schemeDarkWhite">Тёмный (чёрный фон, белый текст)</button>
+                <button data-scheme="dark-green" data-i18n="accessibility.schemeDarkGreen">Тёмный (чёрный фон, зелёный текст)</button>
+                <button data-scheme="white-black" data-i18n="accessibility.schemeWhiteBlack">Светлый (белый фон, чёрный текст)</button>
+                <button data-scheme="beige-brown" data-i18n="accessibility.schemeBeigeBrown">Бежевый (бежевый фон, коричневый текст)</button>
+                <button data-scheme="blue-darkblue" data-i18n="accessibility.schemeBlueDarkblue">Голубой (голубой фон, синий текст)</button>
+            </div>
+        </div>
+        
+        <div class="accessibility-option">
+            <button id="toggle-images" data-i18n="accessibility.toggleImages">Отключить изображения</button>
+            <button id="reset-accessibility" data-i18n="accessibility.reset">Сбросить настройки</button>
+        </div>
+        <button id="close-accessibility-modal" data-i18n="accessibility.close">Закрыть</button>
+    </div>
+    </div>
     <main>
         <section class="banner-container">
             <div class="banner-container-left">
@@ -30,7 +61,6 @@
                     <p data-i18n="homepage.banner.description">There are many variation of passages are
                         Ipsum available, majority have suffered
                         alteration in some form.</p>
-                    <button class="banner-button" data-i18n="homepage.banner.button">Make a reservation</button>
                 </div>
             </div>
             <div class="banner-container-right">
