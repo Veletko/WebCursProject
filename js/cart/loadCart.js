@@ -1,7 +1,7 @@
 import { loadCleanFunction } from './cleanCart.js';
 import { loadDeleteFunction } from './deleteItemFromCart.js';
 import { getCurrentLanguage, applyTranslations} from '../baseElements/languageService.js';
-
+import { deleteFromCart } from './deleteItemFromCart.js';
 document.addEventListener('DOMContentLoaded', async () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser || !currentUser.id) {
@@ -81,7 +81,33 @@ export function renderCartItems(userId, services) {
 
         const buyButton = card.querySelector('.buy');
         buyButton.addEventListener('click', () => {
-            console.log(`Buying service ${service.id} for user ${userId}`);
+            const orderData = {
+                userId: userId,
+                serviceId: service.id,
+                purchaseTime: new Date().toISOString()
+            };
+
+            fetch('http://localhost:3000/orders', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Order created:', data);
+                console.log(`Buying service ${service.id} for user ${userId}`);
+            })
+            .catch(error => {
+                console.error('Error creating order:', error);
+            });
+            deleteFromCart(userId, service.id)
         });
     });
 
