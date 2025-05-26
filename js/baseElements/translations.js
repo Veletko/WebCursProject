@@ -5,10 +5,68 @@ export const translations = {
       "ru": "Звоните - (+22) 123 456 7890"
     },
     "visuallyImpaired": {
-      "en": "version for the visually impaired",
-      "ru": "версия для слабовидящих"
+      "en": "",
+      "ru": ""
     }
   },
+  "accessibility": {
+        "title": {
+            "en": "Accessibility Settings",
+            "ru": "Настройки доступности"
+        },
+        "fontSize": {
+            "en": "Font Size",
+            "ru": "Размер текста"
+        },
+        "small": {
+            "en": "Small",
+            "ru": "Маленький"
+        },
+        "medium": {
+            "en": "Medium",
+            "ru": "Средний"
+        },
+        "large": {
+            "en": "Large",
+            "ru": "Большой"
+        },
+        "colorScheme": {
+            "en": "Color Scheme",
+            "ru": "Цветовая схема"
+        },
+        "schemeDarkWhite": {
+            "en": "Dark (black bg, white text)",
+            "ru": "Тёмный (чёрный фон, белый текст)"
+        },
+        "schemeDarkGreen": {
+            "en": "Dark (black bg, green text)",
+            "ru": "Тёмный (чёрный фон, зелёный текст)"
+        },
+        "schemeWhiteBlack": {
+            "en": "Light (white bg, black text)",
+            "ru": "Светлый (белый фон, чёрный текст)"
+        },
+        "schemeBeigeBrown": {
+            "en": "Beige (beige bg, brown text)",
+            "ru": "Бежевый (бежевый фон, коричневый текст)"
+        },
+        "schemeBlueDarkblue": {
+            "en": "Blue (blue bg, dark blue text)",
+            "ru": "Голубой (голубой фон, синий текст)"
+        },
+        "toggleImages": {
+            "en": "Toggle Images",
+            "ru": "Отключить изображения"
+        },
+        "reset": {
+            "en": "Reset Settings",
+            "ru": "Сбросить настройки"
+        },
+        "close": {
+            "en": "Close",
+            "ru": "Закрыть"
+        }
+    },
   "header": {
     "nav": {
       "login": {
