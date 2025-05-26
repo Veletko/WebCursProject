@@ -9,7 +9,8 @@
   --dark-green: #111E22;
   --accent-dark: #5C8692;
   --banner-bg: #EBF3F5;
-  --banner-overlay: rgba(0, 44, 54, 0.8)
+  --banner-overlay: rgba(0, 44, 54, 0.8);
+  --footer-text: #fff;
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
   --dark-green: #111E22;
   --accent-dark: #5C8692;
   --banner-bg: #2A3538;
+  --footer-text: #fff;
 }
 
 @font-face {
@@ -100,4 +102,171 @@ body {
 }
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+/* modal page */
+.accessibility-modal {
+    display: none;
+    word-wrap: break-word;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility-modal-content {
+    background: var(--white);
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.accessibility-modal-content h2{
+    font-size: 3.5rem;
+}
+
+.accessibility-option {
+    margin-bottom: 20px;
+}
+
+.font-size-buttons,
+.color-scheme-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.font-size-buttons button,
+.color-scheme-buttons button,
+#toggle-images,
+#close-accessibility-modal {
+    padding: 8px 12px;
+    background: var(--accent-dark);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+
+.font-size-buttons button.active,
+.color-scheme-buttons button.active {
+    background: var(--dark-green);
+}
+
+.accessibility-line-height {
+    line-height: 1.5 !important;
+}
+
+.accessibility-letter-spacing {
+    letter-spacing: 0.12em !important;
+}
+
+.accessibility-word-spacing {
+    word-spacing: 0.16em !important;
+}
+
+.accessibility-text-align {
+    text-align: left !important;
+}
+
+.accessibility-max-width {
+    max-width: 80ch !important;
+}
+
+/* color themees */
+
+.color-scheme-dark-white {
+    --white: #000000 !important;
+    --black: #ffffff !important;
+    --gray: #cccccc !important;
+    --dark-gray: #333333 !important;
+    --accent: #7A9CA5 !important;
+    --border-light: rgba(255, 255, 255, 0.15) !important;
+    --dark-green: #222222 !important;
+    --accent-dark: #fff !important;
+    --banner-bg: #111111 !important;
+    --banner-overlay: rgba(255, 255, 255, 0.1) !important;
+    --footer-text: #fff !important;
+}
+
+
+.color-scheme-dark-green {
+    --white: #000000 !important;
+    --black: #00ff00 !important;
+    --gray: #00cc00 !important;
+    --dark-gray: #003300 !important;
+    --accent: #008800 !important;
+    --border-light: rgba(0, 255, 0, 0.15) !important;
+    --dark-green: #002200 !important;
+    --accent-dark: #006600 !important;
+    --banner-bg: #001100 !important;
+    --banner-overlay: rgba(0, 255, 0, 0.1) !important;
+    --footer-text: #00ff00 !important;
+}
+
+.color-scheme-white-black {
+    --white: #ffffff !important;
+    --black: #141414 !important;
+    --gray: #555555 !important;
+    --dark-gray:  #fff !important;
+    --accent: #7A9CA5 !important;
+    --border-light: rgba(0, 0, 0, 0.15) !important;
+    --dark-green: #f7f7f7 !important;
+    --accent-dark: #5C8692 !important;
+    --banner-bg: #EBF3F5 !important;
+    --banner-overlay: rgba(0, 44, 54, 0.8) !important;
+    --footer-text: #141414 !important;
+}
+
+.color-scheme-beige-brown {
+    --white: #f5f5dc !important; 
+    --black: #654321 !important; 
+    --gray: #8B4513 !important; 
+    --dark-gray: #5D4037 !important;
+    --accent: #A1887F !important;
+    --border-light: rgba(101, 67, 33, 0.15) !important;
+    --dark-green: #4E342E !important;
+    --accent-dark: #795548 !important;
+    --banner-bg: #D7CCC8 !important;
+    --banner-overlay: rgba(101, 67, 33, 0.3) !important;
+}
+
+.color-scheme-blue-darkblue {
+    --white: #add8e6 !important; 
+    --black: #00008b !important; 
+    --gray: #4169E1 !important;
+    --dark-gray: #000080 !important;
+    --accent: #4682B4 !important;
+    --border-light: rgba(0, 0, 139, 0.15) !important;
+    --dark-green: #000050 !important;
+    --accent-dark: #0000CD !important;
+    --banner-bg: #B0E0E6 !important;
+    --banner-overlay: rgba(0, 0, 139, 0.3) !important;
+}
+#reset-accessibility {
+    padding: 10px 20px;
+    background-color: var(--accent-dark); 
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.images-disabled img {
+    display: none !important;
+}
+
+.images-disabled .image-alt-text {
+    display: block !important;
+    color: var(--footer-text);
+    font-family: 'Manrope';
+    padding: 5px;
+    margin: 5px 0;
 }
