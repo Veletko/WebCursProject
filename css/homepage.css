@@ -308,7 +308,7 @@ h3{
     
 }
 .benefits-img-wrapper{
-    background-color: var(--accent-dark);
+    background-color: #5C8692;
     width: 80px;
     height: 80px;
     display: flex;
@@ -389,7 +389,7 @@ h3{
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: #fff;
+    color: var(--footer-text);
 }
 
 .comments-slide-text img {
@@ -656,6 +656,21 @@ h3{
     }
 
     /*#endregion*/
+    .aboutus-content h2 {
+        font-size: 4rem;
+        word-wrap: break-word;
+    }
+    .banner-container-text-logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word;
+    }
+    .banner-container-text-logo img{
+        width: 22px;
+        height: 28px;
+    }
 }
 
 /*#endregion*/

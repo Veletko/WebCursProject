@@ -21,7 +21,6 @@ export function initMobileMenu(placeholderId = 'mobile-menu-placeholder') {
             <div class="mobile-menu-footer">
                 <button class="visually-impaired-button">
                     <img src="/img/eye.png" alt="eye">
-                    <span data-i18n="common.visuallyImpaired">version for the visually impaired</span>
                 </button>
                 <label class="theme-toggle">
                     <input type="checkbox" hidden>  

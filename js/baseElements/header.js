@@ -25,7 +25,7 @@ export function initHeader(placeholderId = 'header-placeholder') {
             </label>
             <button class="visually-impaired-button element">
                 <img src="/img/eye.png" alt="eye">
-                <span data-i18n="common.visuallyImpaired">version for the visually impaired</span>
+                <span data-i18n="common.visuallyImpaired"></span>
             </button>
             <div class="language-selector element">
                 <input type="checkbox" id="lang-switch" class="language-checkbox" hidden>
