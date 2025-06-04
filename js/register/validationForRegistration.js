@@ -1,4 +1,4 @@
-import { getCurrentLanguage, getTranslation } from '../baseElements/languageService.js'; // Импортируем функции для переводов
+import { getCurrentLanguage, getTranslation } from '../baseElements/languageService.js'; 
 
 const commonPasswords = [
     "Password123!", "Qwerty123!", "12345678!", "Admin2024!", "Welcome123!",
@@ -26,7 +26,7 @@ export function showError(fieldId, messageKey) {
 
     const i18nKey = `register.errors.${messageKey}`;
     error.setAttribute('data-i18n', i18nKey);
-    const translatedMessage = getTranslation(i18nKey) || `Error: ${messageKey}`; // Fallback if translation is not found
+    const translatedMessage = getTranslation(i18nKey) || `Error: ${messageKey}`; 
     error.textContent = translatedMessage;
     error.classList.add('active');
     return false;
@@ -311,7 +311,7 @@ export function validateAgree() {
     if (!agreeCheckbox.checked) {
         const i18nKey = 'register.errors.agreeRequired';
         error.setAttribute('data-i18n', i18nKey);
-        const translatedMessage = getTranslation(i18nKey) || 'You must agree to the terms'; // Если перевод не найден, используем запасной текст
+        const translatedMessage = getTranslation(i18nKey) || 'You must agree to the terms';
         error.textContent = translatedMessage;
         error.classList.add('active');
         return false;
