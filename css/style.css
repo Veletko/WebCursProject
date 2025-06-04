@@ -190,7 +190,7 @@ body {
     --dark-green: #222222 !important;
     --accent-dark: #fff !important;
     --banner-bg: #111111 !important;
-    --banner-overlay: rgba(255, 255, 255, 0.1) !important;
+    --banner-overlay: rgba(255, 255, 255, 0.6) !important;
     --footer-text: #fff !important;
 }
 
@@ -205,7 +205,7 @@ body {
     --dark-green: #002200 !important;
     --accent-dark: #006600 !important;
     --banner-bg: #001100 !important;
-    --banner-overlay: rgba(0, 255, 0, 0.1) !important;
+    --banner-overlay: rgba(0, 255, 0, 0.5) !important;
     --footer-text: #00ff00 !important;
 }
 
@@ -219,7 +219,7 @@ body {
     --dark-green: #f7f7f7 !important;
     --accent-dark: #5C8692 !important;
     --banner-bg: #EBF3F5 !important;
-    --banner-overlay: rgba(0, 44, 54, 0.8) !important;
+    --banner-overlay: rgba(225, 232, 237, 0.8) !important;
     --footer-text: #141414 !important;
 }
 
@@ -240,13 +240,14 @@ body {
     --white: #add8e6 !important; 
     --black: #00008b !important; 
     --gray: #4169E1 !important;
-    --dark-gray: #000080 !important;
+    --dark-gray: #4682B4 !important;
     --accent: #4682B4 !important;
     --border-light: rgba(0, 0, 139, 0.15) !important;
-    --dark-green: #000050 !important;
+    --dark-green:#4077a3 !important;
     --accent-dark: #0000CD !important;
     --banner-bg: #B0E0E6 !important;
-    --banner-overlay: rgba(0, 0, 139, 0.3) !important;
+    --banner-overlay: rgba(64, 119, 163, 0.7) !important;
+
 }
 #reset-accessibility {
     padding: 10px 20px;

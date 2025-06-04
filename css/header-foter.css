@@ -271,7 +271,7 @@ footer {
 }
 
 .footer-img {
-    border: 2px solid var(--accentc);
+    border: 2px solid var(--accent);
     width: 55px;
     height: 55px;
     display: flex;

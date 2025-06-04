@@ -1,19 +1,6 @@
 {
   "services": [
     {
-      "id": 4,
-      "title": {
-        "en": "Keratin Straightening"
-      },
-      "image": "/img/card-image1.png",
-      "description": {
-        "en": "Hair structure restoration with straightening effect for 3 months."
-      },
-      "category": "hair",
-      "price": "800",
-      "duration": "120"
-    },
-    {
       "id": 5,
       "title": {
         "ru": "Антицеллюлитный массаж",
@@ -222,39 +209,28 @@
       "category": "barber",
       "price": 22,
       "duration": 40
-    },
-    {
-      "title": {
-        "en": "sdfsd"
-      },
-      "description": {
-        "en": "asdf"
-      },
-      "price": "3",
-      "duration": "3",
-      "category": "sdf",
-      "image": "https://data.cyclowiki.org/images/a/a8/Google_%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA.png",
-      "id": 20
     }
   ],
   "users": [
     {
       "id": 1,
-      "cart": [5,6,7],
-      "nickname": "adminKing",
+      "cart": [
+        7,
+        6
+      ],
+      "nickname": "adminKingg",
       "name": "Alex",
       "surname": "Smith",
-      "second_name": "John",
+      "second_name": "Joh",
       "email": "admin.smith@example.com",
-      "phone": "+1234567890",
-      "date_of_birth": "1985-03-15",
+      "phone": "+375295433463",
+      "date_of_birth": "22.11.2005",
       "password": "admin123!",
       "role": "admin"
     },
     {
       "id": 2,
       "cart": [
-        4,
         8,
         9,
         11,
@@ -330,7 +306,6 @@
     {
       "id": 6,
       "cart": [
-        4,
         8,
         11,
         14,
@@ -387,7 +362,6 @@
     {
       "id": 9,
       "cart": [
-        4,
         7,
         12,
         16,
@@ -421,6 +395,20 @@
       "date_of_birth": "1994-03-27",
       "password": "isabella94",
       "role": "normal_user"
+    }
+  ],
+  "orders": [
+    {
+      "userId": 1,
+      "serviceId": 5,
+      "purchaseTime": "2025-05-26T18:48:38.308Z",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "serviceId": 6,
+      "purchaseTime": "2025-05-28T08:17:13.218Z",
+      "id": 2
     }
   ]
 }
