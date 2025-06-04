@@ -26,6 +26,7 @@ export function showError(fieldId, messageKey) {
 
     const i18nKey = `register.errors.${messageKey}`;
     error.setAttribute('data-i18n', i18nKey);
+    const translatedMessage = getTranslation(i18nKey) || `Error: ${messageKey}`; // Fallback if translation is not found
     error.textContent = translatedMessage;
     error.classList.add('active');
     return false;

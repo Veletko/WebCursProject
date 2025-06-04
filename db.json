@@ -215,8 +215,8 @@
     {
       "id": 1,
       "cart": [
-        7,
-        6
+        6,
+        5
       ],
       "nickname": "adminKingg",
       "name": "Alex",
@@ -409,6 +409,12 @@
       "serviceId": 6,
       "purchaseTime": "2025-05-28T08:17:13.218Z",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "serviceId": 7,
+      "purchaseTime": "2025-06-04T19:03:24.655Z",
+      "id": 3
     }
   ]
 }
