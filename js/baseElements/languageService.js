@@ -37,7 +37,7 @@ export function applyTranslations(root = document) {
   });
 }
 
-function getTranslation(key) {
+export function getTranslation(key) {
   if (!key) return null;
   const keys = key.split('.');
   let result = translations;

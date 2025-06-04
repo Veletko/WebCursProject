@@ -10,48 +10,56 @@ import {
 } from '/js/register/validationForRegistration.js';
 
 export async function validateField(fieldId) {
-    const formData = getUserFormData();
-    
-    switch(fieldId) {
-        case 'email':
-            await validateEmail({...formData, email: document.getElementById('email').value}, API_URL, true);
-            break;
-        case 'nickname':
-            await validateNickname({...formData, nickname: document.getElementById('nickname').value}, API_URL);
-            break;
-        case 'phone':
-            await validatePhone({...formData, phone: document.getElementById('phone').value});
-            break;
-        case 'date_of_birth':
-            await validateDateOfBirth({...formData, date_of_birth: document.getElementById('date_of_birth').value});
-            break;
-        case 'name':
-            await validateName({...formData, name: document.getElementById('name').value});
-            break;
-        case 'second_name':
-            await validateSecondName({...formData, second_name: document.getElementById('second_name').value});
-            break;
-        case 'surname':
-            await validateSurname({...formData, surname: document.getElementById('surname').value});
-            break;
+    const element = document.getElementById(fieldId);
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    const value = element.value;
+    let isValid = true;
+    let errorMessage = '';
+
+    try {
+        switch (fieldId) {
+            case 'email':
+                isValid = await validateEmail({ email: value }, API_URL, true);
+                errorMessage = isValid ? '' : 'Введите корректный email';
+                break;
+            case 'nickname':
+                isValid = await validateNickname({ nickname: value }, API_URL);
+                errorMessage = isValid ? '' : 'Никнейм недоступен или некорректен';
+                break;
+            case 'phone':
+                isValid = await validatePhone({ phone: value });
+                errorMessage = isValid ? '' : 'Введите корректный номер телефона';
+                break;
+            case 'date_of_birth':
+                isValid = await validateDateOfBirth({ date_of_birth: value });
+                errorMessage = isValid ? '' : 'Введите корректную дату рождения';
+                break;
+            case 'name':
+                isValid = await validateName({ name: value });
+                errorMessage = isValid ? '' : 'Имя должно содержать минимум 2 символа';
+                break;
+            case 'second_name':
+                isValid = await validateSecondName({ second_name: value });
+                errorMessage = isValid ? '' : 'Отчество некорректно';
+                break;
+            case 'surname':
+                isValid = await validateSurname({ surname: value });
+                errorMessage = isValid ? '' : 'Фамилия должна содержать минимум 2 символа';
+                break;
+        }
+
+        if (errorElement) {
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = errorMessage ? 'block' : 'none';
+        }
+
+        return isValid;
+    } catch (error) {
+        console.error(`Ошибка валидации поля ${fieldId}:`, error);
+        if (errorElement) {
+            errorElement.textContent = 'Ошибка валидации';
+            errorElement.style.display = 'block';
+        }
+        return false;
     }
-}
-
-export async function validateAllFields() {
-    const formData = getUserFormData();
-    const validationData = {
-        ...formData,
-    };
-    
-
-    const validations = await Promise.all([
-        validateNickname(validationData, API_URL),
-        validateName(validationData),
-        validateSurname(validationData),
-        validateEmail(validationData, API_URL, true),
-        validatePhone(validationData),
-        validateDateOfBirth(validationData)
-    ]);
-    
-    return validations.every(valid => valid);
 }

@@ -1,3 +1,5 @@
+import { getCurrentLanguage, getTranslation } from '../baseElements/languageService.js'; // Импортируем функции для переводов
+
 const commonPasswords = [
     "Password123!", "Qwerty123!", "12345678!", "Admin2024!", "Welcome123!",
     "Abcd1234!", "Password1!", "Sunshine2024!", "Football123!", "Monkey123!"
@@ -22,7 +24,9 @@ export function showError(fieldId, messageKey) {
         return false;
     }
 
-    error.setAttribute('data-i18n', `register.errors.${messageKey}`);
+    const i18nKey = `register.errors.${messageKey}`;
+    error.setAttribute('data-i18n', i18nKey);
+    error.textContent = translatedMessage;
     error.classList.add('active');
     return false;
 }
@@ -304,7 +308,10 @@ export function validateAgree() {
     }
 
     if (!agreeCheckbox.checked) {
-        error.setAttribute('data-i18n', 'register.errors.agreeRequired');
+        const i18nKey = 'register.errors.agreeRequired';
+        error.setAttribute('data-i18n', i18nKey);
+        const translatedMessage = getTranslation(i18nKey) || 'You must agree to the terms'; // Если перевод не найден, используем запасной текст
+        error.textContent = translatedMessage;
         error.classList.add('active');
         return false;
     }

@@ -1,4 +1,4 @@
-import { getUserData,API_URL} from './userData.js';
+import { getUserData, API_URL } from './userData.js';
 import { 
     validateEmail, 
     validateNickname, 
@@ -12,6 +12,7 @@ import {
     validateAgree
 } from './validationForRegistration.js';
 import { updateSubmitButton } from './createNewUser.js';
+
 export async function validateField(fieldId) {
     const validationData = {
         ...getUserData(),

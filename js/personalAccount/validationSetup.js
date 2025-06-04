@@ -6,24 +6,9 @@ export function setupValidation() {
     fields.forEach(fieldId => {
         const element = document.getElementById(fieldId);
         if (element) {
-            element.addEventListener('blur', () => validateField(fieldId, element.value));
+            element.addEventListener('blur', async () => {
+                await validateField(fieldId); 
+            });
         }
     });
-}
-
-export async function validateAllFields() {
-    const fields = ['nickname', 'name', 'second_name', 'surname', 'date_of_birth', 'email', 'phone'];
-    let isValid = true;
-    
-    for (const fieldId of fields) {
-        const element = document.getElementById(fieldId);
-        if (element) {
-            const fieldValid = await validateField(fieldId, element.value);
-            if (!fieldValid) {
-                isValid = false;
-            }
-        }
-    }
-    
-    return isValid;
 }

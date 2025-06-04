@@ -136,26 +136,14 @@ export const translations = {
           "en": "Home",
           "ru": "Главная"
         },
-        "about": {
-          "en": "About Us",
-          "ru": "О нас"
-        },
         "services": {
           "en": "Services",
           "ru": "Услуги"
         },
-        "appointments": {
-          "en": "Appointments",
-          "ru": "Запись"
-        },
         "blog": {
-          "en": "Blog",
-          "ru": "Блог"
+          "en": "Personal account",
+          "ru": "Профиль"
         },
-        "contact": {
-          "en": "Contact Us",
-          "ru": "Контакты"
-        }
       }
     },
     "utility": {

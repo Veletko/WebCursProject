@@ -9,7 +9,7 @@ import {
     setupAgreeCheckbox 
 } from './fieldValidation.js';
 import { Validation } from './validationForRegistration.js'; 
-import { API_URL,getUserData } from './userData.js'; 
+import { API_URL, getUserData } from './userData.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     setupPasswordVisibility();

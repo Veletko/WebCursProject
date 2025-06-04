@@ -1,6 +1,7 @@
 import { fetchUserData, getUserFormData, API_URL } from './userData.js';
-import { validateAllFields, validateField } from './validationForPersonalAccount.js';
+import { validateField } from './validationForPersonalAccount.js';
 
+const changedFieldsTracker = new Set();
 
 document.addEventListener('DOMContentLoaded', async () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         populateForm(userData);
         setupValidation();
         setupEventListeners();
+        await updateSaveButtonState();
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
         alert('Не удалось загрузить данные пользователя');
@@ -23,22 +25,64 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function populateForm(data) {
     ['nickname', 'name', 'second_name', 'surname', 'date_of_birth', 'email', 'phone'].forEach(id => {
-        document.getElementById(id).value = data[id] || '';
+        const element = document.getElementById(id);
+        const errorElement = document.getElementById(`${id}-error`);
+        if (element) {
+            element.value = data[id] || '';
+        }
+        if (errorElement) {
+            errorElement.textContent = ''; 
+            errorElement.style.display = 'none';
+        }
     });
 }
 
-
 function setupValidation() {
-    ['nickname', 'name', 'second_name', 'surname', 'email', 'phone', 'date_of_birth'].forEach(id => {
+    const fields = ['nickname', 'name', 'second_name', 'surname', 'email', 'phone', 'date_of_birth'];
+
+    fields.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
-            element.addEventListener('input', () => {
-                validateField(id);
-                document.getElementById('save-changes').disabled = !hasChanges(); 
+            element.addEventListener('input', async () => {
+                if (element.value !== (window.originalData[id] || '')) {
+                    changedFieldsTracker.add(id);
+                } else {
+                    changedFieldsTracker.delete(id);
+                }
+                const isValid = await validateField(id);
+                console.log(`Input validation for ${id}: ${isValid}, value: ${element.value}`);
+                await updateSaveButtonState();
             });
-            element.addEventListener('blur', () => validateField(id));
+
+            element.addEventListener('blur', async () => {
+                if (element.value !== (window.originalData[id] || '')) {
+                    changedFieldsTracker.add(id);
+                } else {
+                    changedFieldsTracker.delete(id);
+                }
+                const isValid = await validateField(id);
+                console.log(`Blur validation for ${id}: ${isValid}, value: ${element.value}`);
+                await updateSaveButtonState();
+            });
         }
     });
+}
+
+async function updateSaveButtonState() {
+    const saveBtn = document.getElementById('save-changes');
+    const hasChangesFlag = hasChanges();
+    let hasErrors = false;
+
+    for (const fieldId of changedFieldsTracker) {
+        const errorElement = document.getElementById(`${fieldId}-error`);
+        if (errorElement && errorElement.textContent.trim() !== '') {
+            hasErrors = true;
+            console.log(`Error found in ${fieldId}: ${errorElement.textContent}`);
+        }
+    }
+
+    console.log(`Save button state: hasChanges=${hasChangesFlag}, hasErrors=${hasErrors}, changedFields=${[...changedFieldsTracker]}`);
+    saveBtn.disabled = !hasChangesFlag || hasErrors;
 }
 
 function setupEventListeners() {
@@ -47,20 +91,24 @@ function setupEventListeners() {
     const logoutButton = document.getElementById('logout-button');
 
     saveChangesBtn.addEventListener('click', async () => {
-        const changedFields = getChangedFields();
+        let valid = true;
 
+        for (const fieldId of changedFieldsTracker) {
+            const fieldValid = await validateField(fieldId);
+            console.log(`Save validation for ${fieldId}: ${fieldValid}`);
+            if (!fieldValid) valid = false;
+        }
+
+        if (!valid) {
+            alert('Исправьте ошибки в измененных полях');
+            return;
+        }
+
+        const changedFields = getChangedFields();
         if (Object.keys(changedFields).length === 0) {
             alert('Нет изменений для сохранения');
             return;
         }
-
-        let valid = true;
-        for (const key of Object.keys(changedFields)) {
-            const fieldValid = validateField(key);
-            if (!fieldValid) valid = false;
-        }
-
-        if (!valid) return;
 
         try {
             const response = await fetch(`${API_URL}/${JSON.parse(localStorage.getItem('currentUser')).id}`, {
@@ -73,6 +121,7 @@ function setupEventListeners() {
 
             const updatedUser = await response.json();
             window.originalData = { ...updatedUser };
+            changedFieldsTracker.clear();
             saveChangesBtn.disabled = true;
             alert('Изменения сохранены успешно!');
         } catch (error) {
@@ -96,14 +145,13 @@ function getChangedFields() {
     const changedFields = {};
 
     for (const key in currentData) {
-        if (currentData[key] !== window.originalData[key]) {
+        if (currentData[key] !== (window.originalData[key] || '')) {
             changedFields[key] = currentData[key];
         }
     }
 
     return changedFields;
 }
-
 
 function hasChanges() {
     return Object.keys(getChangedFields()).length > 0;

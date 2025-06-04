@@ -1,10 +1,11 @@
-import { getUserData,API_URL } from './userData.js';
+import { getUserData, API_URL } from './userData.js';
 import { generatePassword } from './passwordUtils.js';
 import { validateNickname, generateNickname, Validation } from './validationForRegistration.js';
 import { updateSubmitButton } from './createNewUser.js';
+
 let nicknameGenerationAttempts = 5;
+
 export function setupGenerateNicknameHandler() {
-    
     const generateNicknameBtn = document.querySelector('.generate-nickname');
     if (generateNicknameBtn) {
         generateNicknameBtn.addEventListener('click', async (e) => {
