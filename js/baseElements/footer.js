@@ -31,23 +31,9 @@ export function initFooter(placeholderId = 'footer-placeholder') {
                 <div class="footer-column">
                     <h4 data-i18n="footer.explore.title">Explore</h4>
                     <ul>
-                        <li><a href="#" data-i18n="footer.explore.links.home">Home</a></li>
-                        <li><a href="#" data-i18n="footer.explore.links.about">About Us</a></li>
-                        <li><a href="#" data-i18n="footer.explore.links.services">Services</a></li>
-                        <li><a href="#" data-i18n="footer.explore.links.appointments">Appointments</a></li>
-                        <li><a href="#" data-i18n="footer.explore.links.blog">Blog</a></li>
-                        <li><a href="#" data-i18n="footer.explore.links.contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4 data-i18n="footer.utility.title">Utility Pages</h4>
-                    <ul>
-                        <li><a href="#" data-i18n="footer.utility.links.start">Start here</a></li>
-                        <li><a href="#" data-i18n="footer.utility.links.style">Style guide</a></li>
-                        <li><a href="#" data-i18n="footer.utility.links.notFound">404 not found</a></li>
-                        <li><a href="#" data-i18n="footer.utility.links.password">Password protected</a></li>
-                        <li><a href="#" data-i18n="footer.utility.links.licenses">Licenses</a></li>
-                        <li><a href="#" data-i18n="footer.utility.links.changelog">Changelog</a></li>
+                        <li><a href="/pages/homepage.html" data-i18n="footer.explore.links.home">Home</a></li>
+                        <li><a href="/pages/services.html" data-i18n="footer.explore.links.services">Services</a></li>
+                        <li><a href="/pages/personalAccount.html" data-i18n="footer.explore.links.blog">Personal account</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
