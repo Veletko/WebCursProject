@@ -15,7 +15,11 @@ fetch(`http://localhost:3000/services/${id}`)
   })
   .catch(err => console.error('Ошибка при получении данных:', err));
 
-addToCart();
+const button = document.querySelector('button.card-button[data-i18n="service.buttons.addToCart"]');
+button.addEventListener("click", async ()=>{
+  addToCart();
+})
+
 
 
   
