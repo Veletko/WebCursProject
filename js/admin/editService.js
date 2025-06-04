@@ -62,12 +62,12 @@ if (editForm) {
         };
 
         if (
-            !newData.title.en ||
-            !newData.description.en ||
-            !newData.price ||
-            !newData.duration ||
-            !newData.category ||
-            !newData.image
+            !updatedData.title.en ||
+            !updatedData.description.en ||
+            !updatedData.price ||
+            !updatedData.duration ||
+            !updatedData.category ||
+            !updatedData.image
         ) {
             alert('Please fill in all required fields');
             return;

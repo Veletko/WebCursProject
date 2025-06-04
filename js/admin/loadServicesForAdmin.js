@@ -99,7 +99,7 @@ export function renderPagination() {
 
     const buttonPrev = document.createElement('button');
     buttonPrev.textContent = 'Previous Page';
-    buttonPrev.setAttribute('data-i18n', 'pagination.previous'); // Добавляем атрибут перевода
+    buttonPrev.setAttribute('data-i18n', 'pagination.previous'); 
     buttonPrev.classList.add('pagination-button');
     buttonPrev.disabled = currentAdminPage === 1;
     buttonPrev.addEventListener('click', () => {

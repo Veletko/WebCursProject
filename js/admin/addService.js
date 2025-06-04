@@ -17,7 +17,7 @@ export function openAddModal() {
     document.getElementById('add-image').value = '';
 
     addModal.classList.add('open');
-    document.body.classList.add('modal-open');1
+    document.body.classList.add('modal-open');
 }
 
 export async function handleServiceCreate(newData) {
