@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/css/header-foter.css">
     <link rel="stylesheet" href="/css/homepage.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="/js/baseElements/baseElements.js" type="module" ></script>
-    <script src="/js/homepage/homepage.js" type="module" ></script>
+    <script src="/js/baseElements/baseElements.js" type="module"></script>
+    <script src="../js/homepage/homepage.js" type="module"></script>
 </head>
 <body>
     <div class="preloader">
@@ -19,35 +19,32 @@
     <header id="header-placeholder"></header>
     <div id="mobile-menu-placeholder"></div>
     <div id="accessibility-modal" class="accessibility-modal">
-    <div class="accessibility-modal-content">
-        <h2 data-i18n="accessibility.title">Версия для слабовидящих</h2>
-        
-        <div class="accessibility-option">
-            <h3 data-i18n="accessibility.fontSize">Размер текста</h3>
-            <div class="font-size-buttons">
-                <button data-font-size="small" data-i18n="accessibility.small">Маленький</button>
-                <button data-font-size="medium" class="active" data-i18n="accessibility.medium">Средний</button>
-                <button data-font-size="large" data-i18n="accessibility.large">Большой</button>
+        <div class="accessibility-modal-content">
+            <h2 data-i18n="accessibility.title">Версия для слабовидящих</h2>
+            <div class="accessibility-option">
+                <h3 data-i18n="accessibility.fontSize">Размер текста</h3>
+                <div class="font-size-buttons">
+                    <button data-font-size="small" data-i18n="accessibility.small">Маленький</button>
+                    <button data-font-size="medium" class="active" data-i18n="accessibility.medium">Средний</button>
+                    <button data-font-size="large" data-i18n="accessibility.large">Большой</button>
+                </div>
             </div>
-        </div>
-        
-        <div class="accessibility-option">
-            <h3 data-i18n="accessibility.colorScheme">Цветовая схема</h3>
-            <div class="color-scheme-buttons">
-                <button data-scheme="dark-white" data-i18n="accessibility.schemeDarkWhite">Тёмный (чёрный фон, белый текст)</button>
-                <button data-scheme="dark-green" data-i18n="accessibility.schemeDarkGreen">Тёмный (чёрный фон, зелёный текст)</button>
-                <button data-scheme="white-black" data-i18n="accessibility.schemeWhiteBlack">Светлый (белый фон, чёрный текст)</button>
-                <button data-scheme="beige-brown" data-i18n="accessibility.schemeBeigeBrown">Бежевый (бежевый фон, коричневый текст)</button>
-                <button data-scheme="blue-darkblue" data-i18n="accessibility.schemeBlueDarkblue">Голубой (голубой фон, синий текст)</button>
+            <div class="accessibility-option">
+                <h3 data-i18n="accessibility.colorScheme">Цветовая схема</h3>
+                <div class="color-scheme-buttons">
+                    <button data-scheme="dark-white" data-i18n="accessibility.schemeDarkWhite">Тёмный (чёрный фон, белый текст)</button>
+                    <button data-scheme="dark-green" data-i18n="accessibility.schemeDarkGreen">Тёмный (чёрный фон, зелёный текст)</button>
+                    <button data-scheme="white-black" data-i18n="accessibility.schemeWhiteBlack">Светлый (белый фон, чёрный текст)</button>
+                    <button data-scheme="beige-brown" data-i18n="accessibility.schemeBeigeBrown">Бежевый (бежевый фон, коричневый текст)</button>
+                    <button data-scheme="blue-darkblue" data-i18n="accessibility.schemeBlueDarkblue">Голубой (голубой фон, синий текст)</button>
+                </div>
             </div>
+            <div class="accessibility-option">
+                <button id="toggle-images" data-i18n="accessibility.toggleImages">Отключить изображения</button>
+                <button id="reset-accessibility" data-i18n="accessibility.reset">Сбросить настройки</button>
+            </div>
+            <button id="close-accessibility-modal" data-i18n="accessibility.close">Закрыть</button>
         </div>
-        
-        <div class="accessibility-option">
-            <button id="toggle-images" data-i18n="accessibility.toggleImages">Отключить изображения</button>
-            <button id="reset-accessibility" data-i18n="accessibility.reset">Сбросить настройки</button>
-        </div>
-        <button id="close-accessibility-modal" data-i18n="accessibility.close">Закрыть</button>
-    </div>
     </div>
     <main>
         <section class="banner-container">
@@ -99,7 +96,6 @@
                     suffered alteration in some form, buying to injected humour, 
                     or randomised words which don't look even many desktop publishing packages.
                 </p>
-                
                 <div class="aboutus-features">
                     <div class="feature">
                         <img src="/img/beauty-experts.png" alt="Beauty icon">
@@ -115,7 +111,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="aboutus-image">
                 <img src="/img/aboutus-image.jpg" alt="Comfortable in your skin">
                 <img src="/img/aboutus-hover-image.jpg" alt="bg-image">
@@ -278,6 +273,13 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
+            </div>
+        </section>
+        <section class="map-section">
+            <h3 data-i18n="homepage.map.title">Our Location</h3>
+            <h2 data-i18n="homepage.map.subtitle">Find Us Easily</h2>
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3cb54f44217ea875eaa53345563b4883e90e5b09c18f6b31b2b800dcaf2ff00a&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
             </div>
         </section>
     </main>
